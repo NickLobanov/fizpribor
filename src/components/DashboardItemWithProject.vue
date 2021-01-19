@@ -26,28 +26,40 @@
 </script>
 
 <style scoped>
+    .dashboard-item {
+        width: 342px;
+    }
+
     .dashboard-item__statistics {
         width: 342px;
         min-height: 226px;
         margin-bottom: 12px;
+        background-color: #ffffff;
     }
 
-    .dashboard-item__text {
+    .dashboard-item__title {
         font-size: 16px;
         line-height: 22px;
         color: #474747;
+        text-align: left;
+        padding-top: 6px;
+        padding-left: 25px;
+        margin-bottom: 12px;
     }
 
     .dashboard-item__project {
         width: 342px;
         min-height: 191px;
         margin-bottom: 12px;
+        background-color: #ffffff;
     }
 
     .dashboard-item__list {
         list-style: none;
         padding: 0;
         margin: 0;
+        text-align: left;
+        padding-left: 25px;
     }
 
     .dashboard-item__list-item {
@@ -59,5 +71,6 @@
     .dashboard-item__empty {
         width: 342px;
         min-height: 364px;
+        background-color: #ffffff;
     }
 </style>

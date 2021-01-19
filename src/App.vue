@@ -4,6 +4,7 @@
     <main class="main">
       <ModulePanel />
       <NavPanel />
+      <Dashboard />
     </main>
   </div>
 </template>
@@ -12,13 +13,15 @@
 import Header from '@/components/Header.vue'
 import ModulePanel from '@/components/ModulePanel.vue'
 import NavPanel from '@/components/NavPanel.vue'
+import Dashboard from '@/components/Dashboard.vue'
 
 export default {
   name: 'App',
   components: {
    Header,
    ModulePanel,
-   NavPanel
+   NavPanel,
+   Dashboard
   }
 }
 </script>
