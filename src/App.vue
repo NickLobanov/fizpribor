@@ -1,16 +1,21 @@
 <template>
   <div id="app">
     <Header />
+    <main>
+      <ModulePanel />
+    </main>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
+import ModulePanel from '@/components/ModulePanel.vue'
 
 export default {
   name: 'App',
   components: {
    Header,
+   ModulePanel,
   }
 }
 </script>

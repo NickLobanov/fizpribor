@@ -17,6 +17,7 @@
         justify-content: space-between;
         align-items: center;
         padding-top: 8px;
+        padding-bottom: 7px;
     }
 
     .header__logo {
