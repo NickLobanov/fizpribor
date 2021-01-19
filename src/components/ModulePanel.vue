@@ -15,11 +15,11 @@
 <style scoped>
     .module-panel {
         width: 60px;
-        height: calc(100vh - 80px);
         display: flex;
         flex-direction: column;
         align-items: center;
-        box-shadow: 1px 1px 1px 1px #666666;
+        border-top: 1px solid #666666;
+        border-right: 2px solid #666666;
     }
 
     .module-panel__button {

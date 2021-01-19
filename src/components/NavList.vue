@@ -1,31 +1,31 @@
 <template>
-    <ul class="navbar__list">
-            <li>Общий вид</li>
-            <NavSublist>
-                <li>Дэшборд</li>
-                <li>Аналитика</li>
-                <li>Системная информация</li>
-                <li>Проекты</li>
-            </NavSublist>
-            <li>Управление доступом</li>
-            <NavSublist>
-                <li>Пользователи</li>
-                <li>Организации</li>
-                <li>Группы</li>
-                <li>Роли</li>
-            </NavSublist>
-            <li>Интеграция</li>
-            <NavSublist>
-                <li>Импорты</li>
-                <li>Интеграция с электронной почтой</li>
-            </NavSublist>
-            <li>Параметры сервера</li>
-            <NavSublist>
-                <li>Глобальные параметры</li>
-                <li>Резервное копирование БД</li>
-                <li>Статистика</li>
-            </NavSublist>
-        </ul>
+    <ul class="navbar-list">
+        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Общий вид</h2></li>
+        <NavSublist>
+            <li class="navbar-list__item">Дэшборд</li>
+            <li class="navbar-list__item">Аналитика</li>
+            <li class="navbar-list__item">Системная информация</li>
+            <li class="navbar-list__item">Проекты</li>
+        </NavSublist>
+        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Управление доступом</h2></li>
+        <NavSublist>
+            <li class="navbar-list__item">Пользователи</li>
+            <li class="navbar-list__item">Организации</li>
+            <li class="navbar-list__item">Группы</li>
+            <li class="navbar-list__item">Роли</li>
+        </NavSublist>
+        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Интеграция</h2></li>
+        <NavSublist>
+            <li class="navbar-list__item">Импорты</li>
+            <li class="navbar-list__item">Интеграция с электронной почтой</li>
+        </NavSublist>
+        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Параметры сервера</h2></li>
+        <NavSublist>
+            <li class="navbar-list__item">Глобальные параметры</li>
+            <li class="navbar-list__item">Резервное копирование БД</li>
+            <li class="navbar-list__item">Статистика</li>
+        </NavSublist>
+    </ul>
 </template>
 
 <script>
@@ -38,5 +38,35 @@
 </script>
 
 <style scoped>
+    .navbar-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 21px;
+    }
 
+    .navbar-list__title {
+        text-align: left;
+        font-size: 16px;
+        line-height: 18px;
+        color: #474747;
+    }
+
+    .navbar-list__item {
+        text-align: left;
+        font-size: 14px;
+        line-height: 22px;
+        color: #666667;
+        margin-left: 2px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 12px;
+        border-radius: 3px;
+    }
+
+    .navbar-list__item_title {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 4px;
+    }
 </style>
