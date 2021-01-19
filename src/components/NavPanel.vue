@@ -19,6 +19,7 @@
         width: 348px;
         max-height: 999px;
         border-top: 1px solid #666666;
+        background-color: #ffffff;
     }
 
     .navbar__title {

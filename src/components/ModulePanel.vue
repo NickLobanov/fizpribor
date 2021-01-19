@@ -20,6 +20,7 @@
         align-items: center;
         border-top: 1px solid #666666;
         border-right: 2px solid #666666;
+        background-color: #ffffff;
     }
 
     .module-panel__button {

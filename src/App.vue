@@ -34,5 +34,6 @@ export default {
 
   .main {
     display: flex;
+    background-color: #F2F2F2;
   }
 </style>
