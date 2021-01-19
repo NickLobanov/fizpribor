@@ -43,13 +43,27 @@
         margin: 0;
         padding: 0;
         padding-left: 21px;
+        margin-left: 24px;
     }
 
     .navbar-list__title {
+        position: relative;
         text-align: left;
         font-size: 16px;
         line-height: 18px;
         color: #474747;
+    }
+
+    .navbar-list__title::before {
+        content: '';
+        position: absolute;
+        left: -28px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url('../assets/arrow.svg');
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .navbar-list__item {
