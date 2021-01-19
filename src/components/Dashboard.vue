@@ -20,6 +20,8 @@
 
 <style scoped>
     .dashboard {
+        display: flex;
+        justify-content: space-between;
         width: 1446px;
         margin: 0 auto;
         margin-top: 35px;

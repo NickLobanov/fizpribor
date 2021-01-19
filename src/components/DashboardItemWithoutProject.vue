@@ -25,7 +25,7 @@
 
     .dashboard-item__statistics {
         width: 342px;
-        min-height: 226px;
+        min-height: 364px;
         margin-bottom: 12px;
         background-color: #ffffff;
     }
@@ -44,9 +44,10 @@
         width: 342px;
         min-height: 168px;
         background-color: #ffffff;
+        margin-bottom: 12px;
     }
 
-    .dashboard-item__empty-first {
+    .dashboard-item__empty-second {
         width: 342px;
         min-height: 248px;
         background-color: #ffffff;
