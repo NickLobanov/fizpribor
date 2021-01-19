@@ -14,6 +14,7 @@
 <style scoped>
     .dashboard-header {
         width: 342px;
+        margin-bottom: 12px;
     }
 
     .dashboard-header__title {
