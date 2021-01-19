@@ -1,36 +1,39 @@
 <template>
     <ul class="navbar__list">
             <li>Общий вид</li>
-            <ul>
+            <NavSublist>
                 <li>Дэшборд</li>
                 <li>Аналитика</li>
                 <li>Системная информация</li>
                 <li>Проекты</li>
-            </ul>
+            </NavSublist>
             <li>Управление доступом</li>
-            <ul>
+            <NavSublist>
                 <li>Пользователи</li>
                 <li>Организации</li>
                 <li>Группы</li>
                 <li>Роли</li>
-            </ul>
+            </NavSublist>
             <li>Интеграция</li>
-            <ul>
+            <NavSublist>
                 <li>Импорты</li>
                 <li>Интеграция с электронной почтой</li>
-            </ul>
+            </NavSublist>
             <li>Параметры сервера</li>
-            <ul>
+            <NavSublist>
                 <li>Глобальные параметры</li>
                 <li>Резервное копирование БД</li>
                 <li>Статистика</li>
-            </ul>
+            </NavSublist>
         </ul>
 </template>
 
 <script>
+    import NavSublist from '@/components/NavSublist.vue'
     export default {
-        
+        components: {
+            NavSublist,
+        }
     }
 </script>
 
