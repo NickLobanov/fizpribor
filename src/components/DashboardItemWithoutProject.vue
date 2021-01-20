@@ -24,7 +24,6 @@
     }
 
     .dashboard-item__statistics {
-        width: 342px;
         min-height: 364px;
         margin-bottom: 12px;
         background-color: #ffffff;
@@ -41,15 +40,19 @@
     }
 
     .dashboard-item__empty-first {
-        width: 342px;
         min-height: 168px;
         background-color: #ffffff;
         margin-bottom: 12px;
     }
 
     .dashboard-item__empty-second {
-        width: 342px;
         min-height: 248px;
         background-color: #ffffff;
+    }
+
+    @media screen and (max-width: 1919px) {
+        .dashboard-item {
+            width: 270px;
+        }
     }
 </style>

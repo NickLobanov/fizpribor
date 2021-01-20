@@ -31,7 +31,6 @@
     }
 
     .dashboard-item__statistics {
-        width: 342px;
         min-height: 226px;
         margin-bottom: 12px;
         background-color: #ffffff;
@@ -48,7 +47,6 @@
     }
 
     .dashboard-item__project {
-        width: 342px;
         min-height: 191px;
         margin-bottom: 12px;
         background-color: #ffffff;
@@ -69,8 +67,13 @@
     }
 
     .dashboard-item__empty {
-        width: 342px;
         min-height: 364px;
         background-color: #ffffff;
+    }
+
+    @media screen and (max-width: 1919px) {
+        .dashboard-item {
+            width: 270px;
+        }
     }
 </style>

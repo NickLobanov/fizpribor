@@ -29,7 +29,7 @@
     }
 
     .dashboard-header__button {
-        width: 299px;
+        width: 87%;
         margin: 0 auto;
         margin-bottom: 17px;
         padding-top: 5px;
@@ -37,5 +37,11 @@
         background: #8292A5;
         border: none;
         border-radius: 3px;
+    }
+
+    @media screen and (max-width: 1919px) {
+        .dashboard-header {
+            width: 270px;
+        }
     }
 </style>

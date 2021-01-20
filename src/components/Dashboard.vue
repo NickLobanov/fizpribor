@@ -26,4 +26,10 @@
         margin: 0 auto;
         margin-top: 35px;
     }
+
+    @media screen and (max-width: 1919px) {
+        .dashboard {
+            width: 1100px;
+        }
+    }
 </style>
