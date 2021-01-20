@@ -4,7 +4,7 @@
     <main class="main">
       <ModulePanel />
       <NavPanel />
-      <UsersMenu />
+      <OrganizationMenu />
     </main>
   </div>
 </template>
@@ -14,7 +14,8 @@ import Header from '@/components/Header.vue'
 import ModulePanel from '@/components/ModulePanel.vue'
 import NavPanel from '@/components/NavPanel.vue'
 //import Dashboard from '@/components/Dashboard.vue'
-import UsersMenu from '@/components/UsersMenu.vue'
+//import UsersMenu from '@/components/UsersMenu.vue'
+import OrganizationMenu from '@/components/OrganizationMenu.vue'
 
 export default {
   name: 'App',
@@ -23,7 +24,8 @@ export default {
    ModulePanel,
    NavPanel,
    //Dashboard,
-   UsersMenu
+   //UsersMenu,
+   OrganizationMenu
   }
 }
 </script>
@@ -41,4 +43,5 @@ export default {
     display: flex;
     background-color: #F2F2F2;
   }
+
 </style>
