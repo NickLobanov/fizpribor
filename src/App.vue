@@ -4,7 +4,7 @@
     <main class="main">
       <ModulePanel />
       <NavPanel />
-      <Dashboard />
+      <UsersMenu />
     </main>
   </div>
 </template>
@@ -13,7 +13,8 @@
 import Header from '@/components/Header.vue'
 import ModulePanel from '@/components/ModulePanel.vue'
 import NavPanel from '@/components/NavPanel.vue'
-import Dashboard from '@/components/Dashboard.vue'
+//import Dashboard from '@/components/Dashboard.vue'
+import UsersMenu from '@/components/UsersMenu.vue'
 
 export default {
   name: 'App',
@@ -21,7 +22,8 @@ export default {
    Header,
    ModulePanel,
    NavPanel,
-   Dashboard
+   //Dashboard,
+   UsersMenu
   }
 }
 </script>
