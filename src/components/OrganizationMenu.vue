@@ -1,6 +1,10 @@
 <template>
     <section class="section">
-        <AccessMenuHeader />
+        <AccessMenuHeader :title="title"
+            :buttonText="buttonText"
+            :addButtonText="addButtonText"
+            :deleteButtonText="deleteButtonText"
+        />
         <div class="section__container">
             <div class="section__column">
                 <input type="checkbox" class="section__checkbox"/>
@@ -22,6 +26,14 @@
 <script>
     import AccessMenuHeader from '@/components/AccessMenuHeader.vue'
     export default {
+        data() {
+            return {
+                title: 'ОРГАНИЗАЦИИ',
+                buttonText: 'Новая организация',
+                addButtonText: 'Добавить в проект',
+                deleteButtonText: 'Удалить из проекта'
+            }
+        },
         components: {
             AccessMenuHeader
         }

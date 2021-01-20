@@ -1,13 +1,13 @@
 <template>
     <div class="menu-header">
         <div class="menu-header__search">
-            <h2 class="menu-header__title">Пользователи(38)</h2>
+            <h2 class="menu-header__title">{{title}}</h2>
             <label class="menu-header__label"><input class="menu-header__input"/></label>
-            <button class="menu-header__add-btn">Новый пользователь</button>
+            <button class="menu-header__add-btn">{{buttonText}}</button>
         </div>
         <div class="menu-header__controllers">
-            <button class="menu-header__button menu-header__button_selector">Добавить в группу</button>
-            <button class="menu-header__button menu-header__button_selector">Удалить из группы</button>
+            <button class="menu-header__button menu-header__button_selector">{{addButtonText}}</button>
+            <button class="menu-header__button menu-header__button_selector">{{deleteButtonText}}</button>
             <button class="menu-header__button ">Блокировать</button>
             <button class="menu-header__button">Удалить</button>
         </div>
@@ -16,7 +16,7 @@
 
 <script>
     export default {
-        
+        props: ['title', 'buttonText', 'addButtonText', 'deleteButtonText']
     }
 </script>
 
