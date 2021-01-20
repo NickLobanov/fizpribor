@@ -1,6 +1,23 @@
 <template>
     <section class="section">
         <AccessMenuHeader />
+        <div class="section__container">
+            <div class="section__column">
+                <input type="checkbox" class="section__checkbox"/>
+                <p class="section__title section__title_name">ФИО</p>
+                <p class="section__title section__title_login">Логин</p>
+                <p class="section__title section__title_email">Электронная почта</p>
+                <p class="section__title section__title_group">Роль (группа)</p>
+            </div>
+            <div>
+                <input type="checkbox" class="section__checkbox"/>
+                <p class="section__text section__title_name">Фио</p>
+                <p class="section__text section__title_login">Логин</p>
+                <p class="section__text section__title_email">Электронная почта</p>
+                <p class="section__text section__title_group">Роль (группа)</p>
+                <button class="section__button"></button>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -18,5 +35,51 @@
         width: 1447px;
         padding-top: 17px;
         padding-left: 16px;
+    }
+
+    .section__container {
+        background-color: #ffffff;
+    }
+
+    .section__column {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #EDF2F8;
+        padding-bottom: 10px
+    }
+
+    .section__checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        margin-left: 12.5px;
+    }
+
+    .section__title {
+        font-size: 14px;
+        line-height: 16px;
+        color: #3E434A;
+        opacity: 0.6;
+        text-align: left;
+    }
+    
+    .section__title_name {
+        width: 220px;
+        margin-right: 150px;
+    }
+
+    .section__title_login {
+        width: 73px;
+        margin-right: 130px;
+    }
+
+    .section__title_email {
+        width: 150px;
+        margin-right: 110px;
+    }
+
+    .section__title_group {
+        width: 99px;
+        margin-right: 100px;
     }
 </style>
