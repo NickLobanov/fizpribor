@@ -9,13 +9,13 @@
                 <p class="section__title section__title_email">Электронная почта</p>
                 <p class="section__title section__title_group">Роль (группа)</p>
             </div>
-            <div>
+            <div class="section__users">
                 <input type="checkbox" class="section__checkbox"/>
-                <p class="section__text section__title_name">Фио</p>
-                <p class="section__text section__title_login">Логин</p>
-                <p class="section__text section__title_email">Электронная почта</p>
-                <p class="section__text section__title_group">Роль (группа)</p>
-                <button class="section__button"></button>
+                <p class="section__text section__title_name">Белянин Алексей Васильевич</p>
+                <p class="section__text section__title_login">BelianinA</p>
+                <p class="section__text section__title_email">BelianinA@fizpribor.ru</p>
+                <p class="section__text section__title_group">Разработчик</p>
+                <button class="section__button">настройка</button>
             </div>
         </div>
     </section>
@@ -39,13 +39,15 @@
 
     .section__container {
         background-color: #ffffff;
+        min-height: 768px;
     }
 
     .section__column {
         display: flex;
         align-items: center;
         border-bottom: 1px solid #EDF2F8;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+        margin-bottom: 26px;
     }
 
     .section__checkbox {
@@ -81,5 +83,29 @@
     .section__title_group {
         width: 99px;
         margin-right: 100px;
+    }
+
+    .section__users {
+        display: flex;
+        align-items: center;
+        margin-bottom: 37px;
+    }
+
+    .section__text {
+        font-size: 14px;
+        line-height: 16px;
+        color: #3E434A;
+        text-align: left;
+    }
+
+    .section__button {
+        font-size: 14px;
+        line-height: 16px;
+        color: #3E434A;
+        border: none;
+        background-color: #F1F5F9;
+        opacity: 0.8;
+        border-radius: 3px;
+        padding: 10px 24px;
     }
 </style>
