@@ -2,7 +2,7 @@
     <div class="menu-header">
         <div class="menu-header__search">
             <h2 class="menu-header__title">Пользователи(38)</h2>
-            <input class="menu-header__input"/>
+            <label class="menu-header__label"><input class="menu-header__input"/></label>
             <button class="menu-header__add-btn">Новый пользователь</button>
         </div>
         <div class="menu-header__controllers">
@@ -43,6 +43,8 @@
     }
 
     .menu-header__input {
+        box-sizing: border-box;
+        position: relative;
         padding: 0;
         margin: 0;
         height: 44px;
@@ -51,6 +53,25 @@
         border-radius: 4px;
         box-sizing: border-box;
         margin-right: 440px;
+        padding-left: 40px;
+    }
+
+    .menu-header__label {
+        position: relative;
+    }
+
+    .menu-header__label::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url('../assets/search.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 10px;
+        left: 12px;
+        z-index: 5;
     }
 
     .menu-header__add-btn {

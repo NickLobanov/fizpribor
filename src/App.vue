@@ -4,7 +4,7 @@
     <main class="main">
       <ModulePanel />
       <NavPanel />
-      <GroupMenu />
+      <RoleMenu />
     </main>
   </div>
 </template>
@@ -16,7 +16,8 @@ import NavPanel from '@/components/NavPanel.vue'
 //import Dashboard from '@/components/Dashboard.vue'
 //import UsersMenu from '@/components/UsersMenu.vue'
 //import OrganizationMenu from '@/components/OrganizationMenu.vue'
-import GroupMenu from '@/components/GroupMenu.vue'
+//import GroupMenu from '@/components/GroupMenu.vue'
+import RoleMenu from '@/components/RoleMenu.vue'
 
 export default {
   name: 'App',
@@ -27,7 +28,8 @@ export default {
    //Dashboard,
    //UsersMenu,
    //OrganizationMenu
-   GroupMenu
+   //GroupMenu
+   RoleMenu
   }
 }
 </script>
