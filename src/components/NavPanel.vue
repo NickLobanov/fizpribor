@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <h1 class="navbar__title">Администрирование</h1>
-        <NavList />
+        <NavList @dashboard-click="$emit('dashboard-click')"/>
     </nav>
 </template>
 
@@ -10,7 +10,7 @@
     export default {
         components: {
            NavList, 
-        }
+        },
     }
 </script>
 

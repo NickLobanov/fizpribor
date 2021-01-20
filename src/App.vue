@@ -3,8 +3,8 @@
     <Header />
     <main class="main">
       <ModulePanel />
-      <NavPanel />
-      <UsersMenu />
+      <NavPanel @dashboard-click="dashboardClick"/>
+      <component :is="currentTubComponent"></component>
     </main>
   </div>
 </template>
@@ -13,23 +13,38 @@
 import Header from '@/components/Header.vue'
 import ModulePanel from '@/components/ModulePanel.vue'
 import NavPanel from '@/components/NavPanel.vue'
-//import Dashboard from '@/components/Dashboard.vue'
-import UsersMenu from '@/components/UsersMenu.vue'
+import Dashboard from '@/components/Dashboard.vue'
+//import UsersMenu from '@/components/UsersMenu.vue'
 //import OrganizationMenu from '@/components/OrganizationMenu.vue'
 //import GroupMenu from '@/components/GroupMenu.vue'
 //import RoleMenu from '@/components/RoleMenu.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      currentTub: '',
+    }
+  },
   components: {
    Header,
    ModulePanel,
    NavPanel,
-   //Dashboard,
-   UsersMenu,
+   Dashboard,
+   //UsersMenu,
    //OrganizationMenu
    //GroupMenu
    //RoleMenu
+  },
+  methods: {
+    dashboardClick() {
+      this.currentTub = 'Dashboard'
+    }
+  },
+  computed: {
+    currentTubComponent() {
+      return this.currentTub
+    }
   }
 }
 </script>

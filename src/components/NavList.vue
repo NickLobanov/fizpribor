@@ -2,7 +2,7 @@
     <ul class="navbar-list">
         <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Общий вид</h2></li>
         <NavSublist>
-            <li class="navbar-list__item">Дэшборд</li>
+            <li class="navbar-list__item" @click="$emit('dashboard-click')">Дэшборд</li>
             <li class="navbar-list__item">Аналитика</li>
             <li class="navbar-list__item">Системная информация</li>
             <li class="navbar-list__item">Проекты</li>
