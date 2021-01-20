@@ -7,7 +7,8 @@
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" class="section__checkbox"/>
+                <input type="checkbox" class="section__checkbox test" id="select-all"/>
+                <label for="select-all"></label>
                 <p class="section__title section__title_name">ФИО</p>
                 <p class="section__title section__title_login">Логин</p>
                 <p class="section__title section__title_email">Электронная почта</p>
@@ -43,6 +44,29 @@
 </script>
 
 <style scoped>
+    .test {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .test+label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #9BA8B7;
+        border-radius: 4px;
+        margin-left: 12.5px;
+        margin-right: 12px;
+    }
+
+    .test:checked+label::before {
+        background-image: url('../assets/checked.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     .section {
         width: 1447px;
         padding-top: 17px;
