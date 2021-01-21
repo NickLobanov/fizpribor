@@ -1,25 +1,25 @@
 <template>
     <ul class="navbar-list">
-        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Общий вид</h2></li>
+        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Общий вид</h2></li>
         <NavSublist>
             <li class="navbar-list__item" @click="$emit('dashboard-click')">Дэшборд</li>
             <li class="navbar-list__item">Аналитика</li>
             <li class="navbar-list__item">Системная информация</li>
             <li class="navbar-list__item">Проекты</li>
         </NavSublist>
-        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Управление доступом</h2></li>
+        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Управление доступом</h2></li>
         <NavSublist>
             <li class="navbar-list__item">Пользователи</li>
             <li class="navbar-list__item">Организации</li>
             <li class="navbar-list__item">Группы</li>
             <li class="navbar-list__item">Роли</li>
         </NavSublist>
-        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Интеграция</h2></li>
+        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Интеграция</h2></li>
         <NavSublist>
             <li class="navbar-list__item">Импорты</li>
             <li class="navbar-list__item">Интеграция с электронной почтой</li>
         </NavSublist>
-        <li class="navbar-list__item navbar-list__item_title"><h2 class="navbar-list__title">Параметры сервера</h2></li>
+        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Параметры сервера</h2></li>
         <NavSublist>
             <li class="navbar-list__item">Глобальные параметры</li>
             <li class="navbar-list__item">Резервное копирование БД</li>
@@ -76,11 +76,18 @@
         padding-bottom: 8px;
         padding-left: 12px;
         border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .navbar-list__item:hover {
+        background-color: #3F6AD8;
+        color: #ffffff;
     }
 
     .navbar-list__item_title {
         background-color: transparent;
         padding: 0;
         margin-bottom: 4px;
+        cursor: pointer;
     }
 </style>

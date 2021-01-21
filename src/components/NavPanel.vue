@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <h1 class="navbar__title">Администрирование</h1>
-        <NavList @dashboard-click="$emit('dashboard-click')"/>
+        <NavList @dashboard-click="$emit('dashboard-click')" />
     </nav>
 </template>
 

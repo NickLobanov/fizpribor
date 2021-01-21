@@ -12,6 +12,7 @@
 
 <style scoped>
     .navbar-sublist {
+        width: 258px;
         list-style: none;
         padding: 0;
         margin: 0;
