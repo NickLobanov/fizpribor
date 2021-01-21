@@ -1,26 +1,34 @@
 <template>
     <ul class="navbar-list">
-        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Общий вид</h2></li>
-        <NavSublist>
+        <li class="navbar-list__item_title" @click="generalViewClick">
+            <h2 class="navbar-list__title" :class="{list_close: !generalViewIsOpen}">Общий вид</h2>
+        </li>
+        <NavSublist :isOpen="generalViewIsOpen">
             <li class="navbar-list__item" @click="$emit('dashboard-click')">Дэшборд</li>
             <li class="navbar-list__item">Аналитика</li>
             <li class="navbar-list__item">Системная информация</li>
             <li class="navbar-list__item">Проекты</li>
         </NavSublist>
-        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Управление доступом</h2></li>
-        <NavSublist>
+        <li class="navbar-list__item_title" @click="accessControlClick">
+            <h2 class="navbar-list__title" :class="{list_close: !accessControlIsOpen}">Управление доступом</h2>
+        </li>
+        <NavSublist :isOpen="accessControlIsOpen">
             <li class="navbar-list__item">Пользователи</li>
             <li class="navbar-list__item">Организации</li>
             <li class="navbar-list__item">Группы</li>
             <li class="navbar-list__item">Роли</li>
         </NavSublist>
-        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Интеграция</h2></li>
-        <NavSublist>
+        <li class="navbar-list__item_title" @click="integrationClick">
+            <h2 class="navbar-list__title" :class="{list_close: !integrationIsOpen}">Интеграция</h2>
+        </li>
+        <NavSublist :isOpen="integrationIsOpen">
             <li class="navbar-list__item">Импорты</li>
             <li class="navbar-list__item">Интеграция с электронной почтой</li>
         </NavSublist>
-        <li class="navbar-list__item_title"><h2 class="navbar-list__title">Параметры сервера</h2></li>
-        <NavSublist>
+        <li class="navbar-list__item_title" @click="serverDataClick">
+            <h2 class="navbar-list__title" :class="{list_close: !serverDataIsOpen}">Параметры сервера</h2>
+        </li>
+        <NavSublist :isOpen="serverDataIsOpen">
             <li class="navbar-list__item">Глобальные параметры</li>
             <li class="navbar-list__item">Резервное копирование БД</li>
             <li class="navbar-list__item">Статистика</li>
@@ -31,6 +39,28 @@
 <script>
     import NavSublist from '@/components/NavSublist.vue'
     export default {
+        data() {
+            return {
+                generalViewIsOpen: true,
+                accessControlIsOpen: true,
+                integrationIsOpen: true,
+                serverDataIsOpen: true,
+            }
+        },
+        methods: {
+            generalViewClick() {
+                this.generalViewIsOpen = !this.generalViewIsOpen
+            },
+            accessControlClick() {
+                this.accessControlIsOpen = !this.accessControlIsOpen
+            },
+            integrationClick() {
+                this.integrationIsOpen = !this.integrationIsOpen
+            },
+            serverDataClick() {
+                this.serverDataIsOpen = !this.serverDataIsOpen
+            }
+        },
         components: {
             NavSublist,
         }
@@ -64,6 +94,10 @@
         background-image: url('../assets/arrow.svg');
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    .list_close::before {
+        transform: rotate(90deg);
     }
 
     .navbar-list__item {
