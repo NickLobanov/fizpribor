@@ -12,11 +12,11 @@
                 <p class="section__title section__title_keys">Ключ</p>
                 <p class="section__title section__title_functions">Функции</p>
             </div>
-            <div class="section__users">
+            <div class="section__users" v-for="(role, id) in getRole" :key="id">
                 <input type="checkbox" class="section__checkbox"/>
-                <p class="section__text section__title_name">АО "Атомтехэнерго"</p>
-                <p class="section__text section__title_keys">developer</p>
-                <p class="section__text section__title_functions">Конфигуратор БД (редактирование), Редактор блоков (редкатирование)</p>
+                <p class="section__text section__title_name">{{role.name}}</p>
+                <p class="section__text section__title_keys">{{role.keyName}}</p>
+                <p class="section__text section__title_functions">{{role.functions.join(', ')}}</p>
                 <button class="section__button">Настройка</button>
             </div>
         </div>
@@ -25,6 +25,7 @@
 
 <script>
     import AccessMenuHeader from '@/components/AccessMenuHeader.vue'
+    import {mapGetters} from 'vuex'
     export default {
         data() {
             return {
@@ -36,7 +37,8 @@
         },
         components: {
             AccessMenuHeader
-        }
+        },
+        computed: mapGetters(['getRole'])
     }
 </script>
 
