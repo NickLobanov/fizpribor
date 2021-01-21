@@ -12,11 +12,11 @@
                 <p class="section__title section__title_projects">Проекты</p>
                 <p class="section__title section__title_competitors">Участники</p>
             </div>
-            <div class="section__users">
+            <div class="section__users" v-for="organization in getOrganizations" :key="organization.name">
                 <input type="checkbox" class="section__checkbox"/>
-                <p class="section__text section__title_name">АО "Атомтехэнерго"</p>
-                <p class="section__text section__title_projects">АЭС Нововоронежская, АЭС Ленинградская, АЭС Калинская</p>
-                <p class="section__text section__title_competitors">5</p>
+                <p class="section__text section__title_name">{{organization.name}}</p>
+                <p class="section__text section__title_projects">{{organization.project}}</p>
+                <p class="section__text section__title_competitors">{{organization.responible}}</p>
                 <button class="section__button">Настройка</button>
             </div>
         </div>
@@ -25,6 +25,7 @@
 
 <script>
     import AccessMenuHeader from '@/components/AccessMenuHeader.vue'
+    import {mapGetters} from 'vuex'
     export default {
         data() {
             return {
@@ -36,7 +37,8 @@
         },
         components: {
             AccessMenuHeader
-        }
+        },
+        computed: mapGetters(['getOrganizations'])
     }
 </script>
 

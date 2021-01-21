@@ -20,7 +20,7 @@
                 <p class="section__text section__title_login">{{user.login}}</p>
                 <p class="section__text section__title_email">{{user.email}}</p>
                 <p class="section__text section__title_group">{{user.role}}</p>
-                <button class="section__button">настройка</button>
+                <button class="section__button">Настройка</button>
             </div>
         </div>
     </section>
