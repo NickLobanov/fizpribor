@@ -12,11 +12,11 @@
                 <p class="section__title section__title_projects">Проекты</p>
                 <p class="section__title section__title_competitors">Участники</p>
             </div>
-            <div class="section__users" v-for="organization in getOrganizations" :key="organization.name">
+            <div class="section__users" v-for="group in getGroups" :key="group.name">
                 <input type="checkbox" class="section__checkbox"/>
-                <p class="section__text section__title_name">{{organization.name}}</p>
-                <p class="section__text section__title_projects">{{organization.project}}</p>
-                <p class="section__text section__title_competitors">{{organization.responible}}</p>
+                <p class="section__text section__title_name">{{group.name}}</p>
+                <p class="section__text section__title_projects">{{group.project}}</p>
+                <p class="section__text section__title_competitors">{{group.competitors}}</p>
                 <button class="section__button">Настройка</button>
             </div>
         </div>
@@ -38,7 +38,7 @@
         components: {
             AccessMenuHeader
         },
-        computed: mapGetters(['getOrganizations'])
+        computed: mapGetters(['getGroups'])
     }
 </script>
 
