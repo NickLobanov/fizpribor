@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar">
         <h1 class="navbar__title">Администрирование</h1>
-        <NavList @dashboard-click="$emit('dashboard-click')" />
+        <NavList @menu-click='menuClick' />
     </nav>
 </template>
 
@@ -11,6 +11,11 @@
         components: {
            NavList, 
         },
+        methods: {
+            menuClick(event) {
+                this.$emit('menu-click', event.target.id)
+            }
+        }
     }
 </script>
 

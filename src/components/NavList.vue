@@ -4,7 +4,7 @@
             <h2 class="navbar-list__title" :class="{list_close: !generalViewIsOpen}">Общий вид</h2>
         </li>
         <NavSublist :isOpen="generalViewIsOpen">
-            <li class="navbar-list__item" @click="$emit('dashboard-click')">Дэшборд</li>
+            <li class="navbar-list__item" id="dashboard" @click="$emit('menu-click', $event)">Дэшборд</li>
             <li class="navbar-list__item">Аналитика</li>
             <li class="navbar-list__item">Системная информация</li>
             <li class="navbar-list__item">Проекты</li>
@@ -13,10 +13,10 @@
             <h2 class="navbar-list__title" :class="{list_close: !accessControlIsOpen}">Управление доступом</h2>
         </li>
         <NavSublist :isOpen="accessControlIsOpen">
-            <li class="navbar-list__item">Пользователи</li>
-            <li class="navbar-list__item">Организации</li>
-            <li class="navbar-list__item">Группы</li>
-            <li class="navbar-list__item">Роли</li>
+            <li class="navbar-list__item" id="users" @click="$emit('menu-click', $event)">Пользователи</li>
+            <li class="navbar-list__item" id="organization" @click="$emit('menu-click', $event)">Организации</li>
+            <li class="navbar-list__item" id="group" @click="$emit('menu-click', $event)">Группы</li>
+            <li class="navbar-list__item" id="role" @click="$emit('menu-click', $event)">Роли</li>
         </NavSublist>
         <li class="navbar-list__item_title" @click="integrationClick">
             <h2 class="navbar-list__title" :class="{list_close: !integrationIsOpen}">Интеграция</h2>

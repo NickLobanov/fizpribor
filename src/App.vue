@@ -3,7 +3,7 @@
     <Header />
     <main class="main">
       <ModulePanel />
-      <NavPanel @dashboard-click="dashboardClick"/>
+      <NavPanel @menu-click="menuClick" />
       <component :is="currentTubComponent"></component>
     </main>
   </div>
@@ -14,16 +14,16 @@ import Header from '@/components/Header.vue'
 import ModulePanel from '@/components/ModulePanel.vue'
 import NavPanel from '@/components/NavPanel.vue'
 import Dashboard from '@/components/Dashboard.vue'
-//import UsersMenu from '@/components/UsersMenu.vue'
-//import OrganizationMenu from '@/components/OrganizationMenu.vue'
-//import GroupMenu from '@/components/GroupMenu.vue'
-//import RoleMenu from '@/components/RoleMenu.vue'
+import Users from '@/components/UsersMenu.vue'
+import Organization from '@/components/OrganizationMenu.vue'
+import Group from '@/components/GroupMenu.vue'
+import Role from '@/components/RoleMenu.vue'
 
 export default {
   name: 'App',
   data() {
     return {
-      currentTub: '',
+      currentTub: 'Dashboard',
     }
   },
   components: {
@@ -31,14 +31,15 @@ export default {
    ModulePanel,
    NavPanel,
    Dashboard,
-   //UsersMenu,
-   //OrganizationMenu
-   //GroupMenu
-   //RoleMenu
+   Users,
+   Organization,
+   Group,
+   Role,
   },
   methods: {
-    dashboardClick() {
-      this.currentTub = 'Dashboard'
+    menuClick(itemId) {
+      console.log(itemId)
+      this.currentTub = itemId[0].toUpperCase() + itemId.slice(1)
     }
   },
   computed: {
