@@ -4,7 +4,10 @@
             <h2 class="navbar-list__title" :class="{list_close: !generalViewIsOpen}">Общий вид</h2>
         </li>
         <NavSublist :isOpen="generalViewIsOpen">
-            <li class="navbar-list__item" id="dashboard" @click="$emit('menu-click', $event)">Дэшборд</li>
+            <li class="navbar-list__item" :class="{navbar_active: currentItem === 'Dashboard'}"
+                id="dashboard"
+                @click="$emit('menu-click', $event)">Дэшборд
+            </li>
             <li class="navbar-list__item">Аналитика</li>
             <li class="navbar-list__item">Системная информация</li>
             <li class="navbar-list__item">Проекты</li>
@@ -13,10 +16,18 @@
             <h2 class="navbar-list__title" :class="{list_close: !accessControlIsOpen}">Управление доступом</h2>
         </li>
         <NavSublist :isOpen="accessControlIsOpen">
-            <li class="navbar-list__item" id="users" @click="$emit('menu-click', $event)">Пользователи</li>
-            <li class="navbar-list__item" id="organization" @click="$emit('menu-click', $event)">Организации</li>
-            <li class="navbar-list__item" id="group" @click="$emit('menu-click', $event)">Группы</li>
-            <li class="navbar-list__item" id="role" @click="$emit('menu-click', $event)">Роли</li>
+            <li class="navbar-list__item" id="users"
+                @click="$emit('menu-click', $event)"
+                :class="{navbar_active: currentItem === 'Users'}">Пользователи</li>
+            <li class="navbar-list__item" id="organization"
+                @click="$emit('menu-click', $event)"
+                :class="{navbar_active: currentItem === 'Organization'}">Организации</li>
+            <li class="navbar-list__item" id="group"
+                @click="$emit('menu-click', $event)"
+                :class="{navbar_active: currentItem === 'Group'}">Группы</li>
+            <li class="navbar-list__item" id="role"
+                @click="$emit('menu-click', $event)"
+                :class="{navbar_active: currentItem === 'Role'}">Роли</li>
         </NavSublist>
         <li class="navbar-list__item_title" @click="integrationClick">
             <h2 class="navbar-list__title" :class="{list_close: !integrationIsOpen}">Интеграция</h2>
@@ -39,6 +50,7 @@
 <script>
     import NavSublist from '@/components/NavSublist.vue'
     export default {
+        props: ['currentItem'],
         data() {
             return {
                 generalViewIsOpen: true,
@@ -114,6 +126,11 @@
     }
 
     .navbar-list__item:hover {
+        background-color: #3F6AD8;
+        color: #ffffff;
+    }
+
+    .navbar_active {
         background-color: #3F6AD8;
         color: #ffffff;
     }

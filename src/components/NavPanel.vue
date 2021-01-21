@@ -1,13 +1,14 @@
 <template>
     <nav class="navbar">
         <h1 class="navbar__title">Администрирование</h1>
-        <NavList @menu-click='menuClick' />
+        <NavList @menu-click='menuClick' :currentItem="currentItem"/>
     </nav>
 </template>
 
 <script>
     import NavList from '@/components/NavList.vue'
     export default {
+        props: ['currentItem'],
         components: {
            NavList, 
         },

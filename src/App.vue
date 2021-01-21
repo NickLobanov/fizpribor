@@ -3,7 +3,7 @@
     <Header />
     <main class="main">
       <ModulePanel />
-      <NavPanel @menu-click="menuClick" />
+      <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
       <component :is="currentTubComponent"></component>
     </main>
   </div>
@@ -38,7 +38,6 @@ export default {
   },
   methods: {
     menuClick(itemId) {
-      console.log(itemId)
       this.currentTub = itemId[0].toUpperCase() + itemId.slice(1)
     }
   },
