@@ -12,8 +12,8 @@
                 <p class="section__title section__title_projects">Проекты</p>
                 <p class="section__title section__title_responible">Ответсвенный</p>
             </div>
-            <div class="section__users">
-                <input type="checkbox" class="section__checkbox" v-for="organization in getOrganizations" :key="organization.name"/>
+            <div class="section__users" v-for="organization in getOrganizations" :key="organization.name">
+                <input type="checkbox" class="section__checkbox" />
                 <p class="section__text section__title_name">{{organization.name}}</p>
                 <p class="section__text section__title_projects">{{organization.project}}</p>
                 <p class="section__text section__title_responible">{{organization.responible}}</p>
