@@ -5,7 +5,13 @@
       <ModulePanel />
       <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
       <component :is="currentTubComponent"></component>
-      <Popup />
+      <PopupUsers :popupUserName="popupUserName"
+        :popupUserSecondName="popupUserSecondName"
+        :popupUserPatronymic="popupUserPatronymic"
+        :popupUserLogin="popupUserLogin"
+        :popupUserEmail="popupUserEmail"
+        :popupUserRole="popupUserRole"
+      />
     </main>
   </div>
 </template>
@@ -19,13 +25,19 @@ import Users from '@/components/UsersMenu.vue'
 import Organization from '@/components/OrganizationMenu.vue'
 import Group from '@/components/GroupMenu.vue'
 import Role from '@/components/RoleMenu.vue'
-import Popup from '@/components/Popup.vue'
+import PopupUsers from '@/components/PopupUsers.vue'
 
 export default {
   name: 'App',
   data() {
     return {
       currentTub: 'Dashboard',
+      popupUserName: 'Введите имя',
+      popupUserSecondName: 'Введите фамилию',
+      popupUserPatronymic: 'Введите отчество',
+      popupUserLogin: 'Введите логин',
+      popupUserEmail: 'Введите email',
+      popupUserRole: 'Введите роль',
     }
   },
   components: {
@@ -37,7 +49,7 @@ export default {
    Organization,
    Group,
    Role,
-   Popup
+   PopupUsers
   },
   methods: {
     menuClick(itemId) {

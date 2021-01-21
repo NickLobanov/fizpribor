@@ -3,9 +3,6 @@
         <form class="popup__form">
             <h2 class="popup__title">title</h2>
             <slot></slot>
-            <input class="popup__input" placeholder="текст"/>
-            <input class="popup__input" placeholder="текст"/>
-            <input class="popup__input" placeholder="текст"/>
             <button class="popup__button">Создать</button>
             <button class="popup__close-btn"></button>
         </form>
