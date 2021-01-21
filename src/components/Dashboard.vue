@@ -1,9 +1,9 @@
 <template>
     <section class="dashboard">
-        <DashboardItemWithProject />
-        <DashboardItemWithoutProject />
-        <DashboardItemWithProject />
-        <DashboardItemWithoutProject />
+        <DashboardItemWithProject :dashboardTitle="newProject" :buttonText="btnTextProject"/>
+        <DashboardItemWithoutProject :dashboardTitle="newOrganization" :buttonText="btnTextOrganization"/>
+        <DashboardItemWithProject :dashboardTitle="newUser" :buttonText="btnTextUser"/>
+        <DashboardItemWithoutProject :dashboardTitle="newGroup" :buttonText="btnTextGroup"/>
     </section>
 </template>
 
@@ -14,6 +14,18 @@
         components: {
             DashboardItemWithProject,
             DashboardItemWithoutProject
+        },
+        data() {
+            return {
+                newProject: 'Проеты',
+                btnTextProject: 'Новый проект',
+                newOrganization: 'Организации',
+                btnTextOrganization: 'Новая организация',
+                newUser: 'Пользователи',
+                btnTextUser: 'Новый пользователь',
+                newGroup: 'Группы',
+                btnTextGroup: 'Новая группа',
+            }
         }
     }
 </script>

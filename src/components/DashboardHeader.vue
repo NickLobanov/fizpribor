@@ -1,13 +1,13 @@
 <template>
     <div class="dashboard-header">
-        <h2 class="dashboard-header__title">Text</h2>
-        <button class="dashboard-header__button">Text</button>
+        <h2 class="dashboard-header__title">{{dashboardTitle}}</h2>
+        <button class="dashboard-header__button">{{buttonText}}</button>
     </div>
 </template>
 
 <script>
     export default {
-        
+        props: ['dashboardTitle', 'buttonText']
     }
 </script>
 

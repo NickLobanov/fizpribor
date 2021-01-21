@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard-item">
-        <DashboardHeader />
+        <DashboardHeader :dashboardTitle="dashboardTitle" :buttonText="buttonText"/>
         <div class="dashboard-item__statistics">
             <h2 class="dashboard-item__title">Статистика</h2>
         </div>
@@ -21,7 +21,8 @@
     export default {
         components: {
             DashboardHeader,
-        }
+        },
+        props: ['dashboardTitle', 'buttonText']
     }
 </script>
 
