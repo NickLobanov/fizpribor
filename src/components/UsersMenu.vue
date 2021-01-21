@@ -14,12 +14,12 @@
                 <p class="section__title section__title_email">Электронная почта</p>
                 <p class="section__title section__title_group">Роль (группа)</p>
             </div>
-            <div class="section__users">
+            <div class="section__users" v-for="user in getUsers" :key="user.name">
                 <input type="checkbox" class="section__checkbox"/>
-                <p class="section__text section__title_name">Белянин Алексей Васильевич</p>
-                <p class="section__text section__title_login">BelianinA</p>
-                <p class="section__text section__title_email">BelianinA@fizpribor.ru</p>
-                <p class="section__text section__title_group">Разработчик</p>
+                <p class="section__text section__title_name">{{user.secondName + ' ' + user.name + ' ' + user.patronymic}}</p>
+                <p class="section__text section__title_login">{{user.login}}</p>
+                <p class="section__text section__title_email">{{user.email}}</p>
+                <p class="section__text section__title_group">{{user.role}}</p>
                 <button class="section__button">настройка</button>
             </div>
         </div>
@@ -28,18 +28,20 @@
 
 <script>
     import AccessMenuHeader from '@/components/AccessMenuHeader.vue'
+    import {mapGetters} from 'vuex'
     export default {
         data() {
             return {
                 title: 'ПОЛЬЗОВАТЕЛИ',
                 buttonText: 'Новый пользователь',
                 addButtonText: 'Добавить в группу',
-                deleteButtonText: 'Удалить из группы'
+                deleteButtonText: 'Удалить из группы',
             }
         },
         components: {
             AccessMenuHeader,
-        }
+        },
+        computed: mapGetters(['getUsers']),
     }
 </script>
 

@@ -15,7 +15,7 @@ export default new Vuex.Store({
                 login: 'BelianinA',
                 email: 'BelianinA@fizpribor.ru',
                 role: 'Разработчик'
-            }
+            },
         ],
         organizations: [
             {
@@ -39,5 +39,18 @@ export default new Vuex.Store({
             }
         ]
     },
-    getters: {}
+    getters: {
+        getUsers(state) {
+            return state.users
+        },
+        getOrganizations(state) {
+            return state.organizations
+        },
+        getGroups(state) {
+            return state.groups
+        },
+        getRole(state) {
+            return state.role
+        },
+    }
 })
