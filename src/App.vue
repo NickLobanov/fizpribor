@@ -32,12 +32,6 @@ export default {
   data() {
     return {
       currentTub: 'Dashboard',
-      popupUserName: 'Введите имя',
-      popupUserSecondName: 'Введите фамилию',
-      popupUserPatronymic: 'Введите отчество',
-      popupUserLogin: 'Введите логин',
-      popupUserEmail: 'Введите email',
-      popupUserRole: 'Введите роль',
     }
   },
   components: {

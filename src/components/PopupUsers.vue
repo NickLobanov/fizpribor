@@ -1,11 +1,11 @@
 <template>
     <Popup>
-        <input class="popup__input" :placeholder="popupUserName"/>
-        <input class="popup__input" :placeholder="popupUserSecondName"/>
-        <input class="popup__input" :placeholder="popupUserPatronymic"/>
-        <input class="popup__input" :placeholder="popupUserLogin"/>
-        <input class="popup__input" :placeholder="popupUserEmail"/>
-        <input class="popup__input" :placeholder="popupUserRole"/>
+        <input class="popup__input" placeholder="Введите имя"/>
+        <input class="popup__input" placeholder="Введите фамилию"/>
+        <input class="popup__input" placeholder="Введите отчество"/>
+        <input class="popup__input" placeholder="Введите логин"/>
+        <input class="popup__input" placeholder="Введите email"/>
+        <input class="popup__input" placeholder="Введите роль"/>
     </Popup>
 </template>
 
@@ -15,7 +15,6 @@
         components: {
             Popup,
         },
-        props: ['popupUserName', 'popupUserSecondName', 'popupUserPatronymic', 'popupUserLogin', 'popupUserEmail', 'popupUserRole']
     }
 </script>
 
