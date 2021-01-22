@@ -159,4 +159,10 @@
         border-radius: 3px;
         padding: 10px 24px;
     }
+
+    @media screen and (max-width: 1919px) {
+        .section {
+            width: 1100px;
+        }
+    }
 </style>
