@@ -2,19 +2,19 @@
     <section class="dashboard">
         <DashboardItemWithProject :dashboardTitle="newProject"
             :buttonText="btnTextProject" 
-            :amountState="this.getUsers.length"
+            :amountState="this.getUsers"
         />
         <DashboardItemWithoutProject :dashboardTitle="newOrganization"
             :buttonText="btnTextOrganization" 
-            :amountState="this.getOrganizations.length"
+            :amountState="this.getOrganizations"
         />
         <DashboardItemWithProject :dashboardTitle="newUser" 
             :buttonText="btnTextUser" 
-            :amountState="this.getGroups.length"
+            :amountState="this.getGroups"
         />
         <DashboardItemWithoutProject :dashboardTitle="newGroup"
             :buttonText="btnTextGroup" 
-            :amountState="this.getRole.length"
+            :amountState="this.getRole"
         />
     </section>
 </template>

@@ -141,30 +141,61 @@ export default new Vuex.Store({
                 role: 'Разработчик',
                 isChecked: false,
             },
+            {
+                name: 'Максим',
+                secondName: 'Ничаев',
+                patronymic: 'Артурович',
+                login: 'NechaevM',
+                email: 'NechaevM@fizpribor.ru',
+                role: 'Руководитель',
+                isChecked: false,
+            },
+            
         ],
+
         organizations: [
             {
                 name: 'ООО «Физприбор»',
                 project: 'АЭС Аккую, АЭС Нововоронежская',
+                responible: 'Нечаев М.А.',
+                isChecked: false,
+            },
+            {
+                name: 'АО "Атомтехэнерго"',
+                project: 'АЭС Нововоронежская, АЭС Ленинградская, АЭС Калинская',
                 responible: 'Руководитель',
                 isChecked: false,
             }
         ],
+
         groups: [
             {
                 name: 'ООО «Физприбор»',
                 project: 'АЭС Аккую, АЭС Нововоронежская',
                 competitors: 5,
                 isChecked: false,
+            },
+            {
+                name: 'АО "Атомтехэнерго"',
+                project: 'АЭС Нововоронежская, АЭС Ленинградская, АЭС Калинская',
+                competitors: 10,
+                isChecked: false,
             }
         ],
+
         role: [
             {
                 name: 'Разработчик',
                 keyName: 'developer',
                 functions: ['Конфигуратор БД (редактирование)', 'Редактор блоков (редкатирование)'],
                 isChecked: false,  
-            }
+            },
+            {
+                name: 'Руководитель',
+                keyName: 'CEO',
+                functions: ['Дешборд проектов', 'Конфигуратор БД (чтение)', 'Редактор блоков (чтение)'],
+                isChecked: false,  
+            },
         ]
     },
     getters: {

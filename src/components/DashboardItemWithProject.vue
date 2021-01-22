@@ -1,15 +1,13 @@
 <template>
     <div class="dashboard-item">
-        <DashboardHeader :dashboardTitle="dashboardTitle" :buttonText="buttonText" :amountState="amountState"/>
+        <DashboardHeader :dashboardTitle="dashboardTitle" :buttonText="buttonText" :amountState="amountState.length"/>
         <div class="dashboard-item__statistics">
             <h2 class="dashboard-item__title">Статистика</h2>
         </div>
         <div class="dashboard-item__project">
             <h2 class="dashboard-item__title">Список проектов</h2>
             <ul class="dashboard-item__list">
-                <li class="dashboard-item__list-item">101KAC20AP001_1</li>
-                <li class="dashboard-item__list-item">101KAC20AP001_1</li>
-                <li class="dashboard-item__list-item">101KAC20AP001_1</li>
+                <li class="dashboard-item__list-item" v-for="(item, id) in 3" :key="id">101KAC20AP001_1</li>
             </ul>
         </div>
         <div class="dashboard-item__empty"></div>
