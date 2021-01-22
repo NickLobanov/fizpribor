@@ -1,11 +1,11 @@
 <template>
     <Popup>
-        <input class="popup__input" placeholder="Введите имя"/>
-        <input class="popup__input" placeholder="Введите фамилию"/>
-        <input class="popup__input" placeholder="Введите отчество"/>
-        <input class="popup__input" placeholder="Введите логин"/>
-        <input class="popup__input" placeholder="Введите email"/>
-        <input class="popup__input" placeholder="Введите роль"/>
+        <input class="popup__input" placeholder="Имя"/>
+        <input class="popup__input" placeholder="Фамилия"/>
+        <input class="popup__input" placeholder="Отчество"/>
+        <input class="popup__input" placeholder="Логин"/>
+        <input class="popup__input" placeholder="Email"/>
+        <input class="popup__input" placeholder="Роль"/>
     </Popup>
 </template>
 
