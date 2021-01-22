@@ -38,6 +38,7 @@
                     login: this.login,
                     email: this.email,
                     role: this.role,
+                    isChecked: false
                 })
                 this.name = this.secondName = this.patronymic = this.login = this.email = this.role = ''
                 this.onClose()

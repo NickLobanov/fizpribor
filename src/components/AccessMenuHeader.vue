@@ -9,7 +9,7 @@
             <button class="menu-header__button menu-header__button_selector">{{addButtonText}}</button>
             <button class="menu-header__button menu-header__button_selector">{{deleteButtonText}}</button>
             <button class="menu-header__button ">Блокировать</button>
-            <button class="menu-header__button">Удалить</button>
+            <button class="menu-header__button" @click="$emit('handle-delete')">Удалить</button>
         </div>
     </div>
 </template>

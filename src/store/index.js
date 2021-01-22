@@ -4,11 +4,30 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    actions: {},
+    actions: {
+        checkUser(ctx, userId) {
+            ctx.commit('checkUser', userId)
+
+        },
+        deleteUser(ctx, users) {
+            const newUsersArray = users.filter((user) => {
+                return user.isChecked !== true
+            })
+            console.log(newUsersArray)
+            ctx.commit('deleteUser', newUsersArray)
+        }
+    },
     mutations: {
         createNewUser(state, addNewUser) {
             state.users.push(addNewUser)
+        },
+        checkUser(state, userId) {
+            state.users[userId].isChecked = !state.users[userId].isChecked
+        },
+        deleteUser(state, users) {
+            state.users = users
         }
+        
     },
     state: {
         users: [
@@ -18,7 +37,8 @@ export default new Vuex.Store({
                 patronymic: 'Васильевич',
                 login: 'BelianinA',
                 email: 'BelianinA@fizpribor.ru',
-                role: 'Разработчик'
+                role: 'Разработчик',
+                isChecked: false,
             },
         ],
         organizations: [

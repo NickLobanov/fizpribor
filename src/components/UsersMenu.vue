@@ -5,6 +5,7 @@
             :addButtonText="addButtonText"
             :deleteButtonText="deleteButtonText"
             @add-button-click="addButtonClick"
+            @handle-delete="deleteUser"
         />
         <div class="section__container">
             <div class="section__column">
@@ -15,8 +16,8 @@
                 <p class="section__title section__title_email">Электронная почта</p>
                 <p class="section__title section__title_group">Роль (группа)</p>
             </div>
-            <div class="section__users" v-for="user in getUsers" :key="user.name">
-                <input type="checkbox" class="section__checkbox"/>
+            <div class="section__users" v-for="(user, id) in getUsers" :key="user.name" :id="id">
+                <input type="checkbox" :checked="user.isChecked" class="section__checkbox" @click="checkUser"/>
                 <p class="section__text section__title_name">{{user.secondName + ' ' + user.name + ' ' + user.patronymic}}</p>
                 <p class="section__text section__title_login">{{user.login}}</p>
                 <p class="section__text section__title_email">{{user.email}}</p>
@@ -44,8 +45,13 @@
         },
         methods: {
             addButtonClick() {
-                console.log('123')
                 this.$emit('add-button-click', 'Users')
+            },
+            checkUser(evt) {
+                this.$store.dispatch('checkUser', evt.target.parentElement.id)
+            },
+            deleteUser() {
+                this.$store.dispatch('deleteUser', this.getUsers)
             }
         },
         computed: mapGetters(['getUsers']),
