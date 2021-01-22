@@ -1,5 +1,5 @@
 <template>
-    <Popup :isOpen="isOpen" @close-popup="$emit('close-popup')" @popup-submit="addNewUser">
+    <Popup :isOpen="isOpen" :title="popupTitle" @close-popup="$emit('close-popup')" @popup-submit="addNewUser">
         <input class="popup__input" placeholder="Имя" v-model="name"/>
         <input class="popup__input" placeholder="Фамилия" v-model="secondName"/>
         <input class="popup__input" placeholder="Отчество" v-model="patronymic"/>
@@ -24,7 +24,8 @@
                 patronymic: '',
                 login: '',
                 email: '',
-                role: ''
+                role: '',
+                popupTitle: 'Новый пользователь'
             }
         },
         methods: {

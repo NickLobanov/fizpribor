@@ -1,5 +1,5 @@
 <template>
-    <Popup :isOpen="isOpen" @close-popup="$emit('close-popup')" @popup-submit="addNewGroup">
+    <Popup :isOpen="isOpen" :title="popupTitle" @close-popup="$emit('close-popup')" @popup-submit="addNewGroup">
         <input class="popup__input" placeholder="Название группы" v-model="name"/>
         <input class="popup__input" placeholder="Название проекта" v-model="project"/>
         <input class="popup__input" placeholder="Участники" v-model="competitors"/>
@@ -18,7 +18,8 @@
             return {
                 name: '',
                 project: '',
-                competitors: ''
+                competitors: '',
+                popupTitle: 'Новая группа'
             }
         },
         methods: {

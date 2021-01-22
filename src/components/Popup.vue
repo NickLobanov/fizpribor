@@ -1,7 +1,7 @@
 <template>
     <div class="popup" :class="{popup_opened: isOpen}">
         <form class="popup__form" @submit.prevent="handleSubmit">
-            <h2 class="popup__title">title</h2>
+            <h2 class="popup__title">{{title}}</h2>
             <slot></slot>
             <button class="popup__button">Создать</button>
             <button type="button" class="popup__close-btn" @click="$emit('close-popup')"></button>
@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        props: ['isOpen'],
+        props: ['isOpen', 'title'],
         methods: {
             handleSubmit() {
                 this.$emit('popup-submit')

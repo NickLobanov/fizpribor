@@ -1,5 +1,5 @@
 <template>
-    <Popup :isOpen="isOpen" @close-popup="$emit('close-popup')" @popup-submit="addNewRole">
+    <Popup :isOpen="isOpen" :title="popupTitle" @close-popup="$emit('close-popup')" @popup-submit="addNewRole">
         <input class="popup__input" placeholder="Название роли" v-model="name"/>
         <input class="popup__input" placeholder="Название ключа" v-model="keyName"/>
         <input class="popup__input" placeholder="Функции" v-model="functions"/>
@@ -13,12 +13,13 @@
         components: {
            Popup 
         },
-        props: ['isOpen', 'onClose'],
+        props: ['isOpen', 'onClose', 'title'],
         data() {
             return {
                 name: '',
                 keyName: '',
                 functions: '',
+                popupTitle: 'Новая роль'
             }
         },
         methods: {

@@ -1,5 +1,5 @@
 <template>
-    <Popup :isOpen="isOpen" @close-popup="$emit('close-popup')" @popup-submit="addNewOrganization">
+    <Popup :isOpen="isOpen" :title="popupTitle" @close-popup="$emit('close-popup')" @popup-submit="addNewOrganization">
         <input class="popup__input" placeholder="Наиминование организации" v-model="name"/>
         <input class="popup__input" placeholder="Название проекта" v-model="project"/>
         <input class="popup__input" placeholder="Ответственный" v-model="responible"/>
@@ -13,12 +13,13 @@
         components: {
             Popup
         },
-        props: ['isOpen', 'onClose'],
+        props: ['isOpen', 'onClose', 'title'],
         data() {
             return {
                 name: '',
                 project: '',
-                responible: ''
+                responible: '',
+                popupTitle: 'Новая организация'
             }
         },
         methods: {

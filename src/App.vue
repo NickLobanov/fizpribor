@@ -35,7 +35,8 @@ export default {
       popupUsersIsOpen: false,
       popupOrganizationIsOpen: false,
       popupGroupIsOpen: false,
-      popupRoleIsOpen: false
+      popupRoleIsOpen: false,
+
     }
   },
   components: {
