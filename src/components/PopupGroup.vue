@@ -1,8 +1,8 @@
 <template>
     <Popup>
-        <input class="popup__input" placeholder="Наиминование организации"/>
+        <input class="popup__input" placeholder="Название группы"/>
         <input class="popup__input" placeholder="Название проекта"/>
-        <input class="popup__input" placeholder="Ответственный"/>
+        <input class="popup__input" placeholder="Участники"/>
     </Popup>
 </template>
 
@@ -15,6 +15,6 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
