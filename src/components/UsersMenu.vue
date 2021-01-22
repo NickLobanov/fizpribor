@@ -9,7 +9,7 @@
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" class="section__checkbox test" id="select-all"/>
+                <input type="checkbox" class="section__checkbox" id="select-all" @click="checkAllUser"/>
                 <label for="select-all"></label>
                 <p class="section__title section__title_name">ФИО</p>
                 <p class="section__title section__title_login">Логин</p>
@@ -17,7 +17,8 @@
                 <p class="section__title section__title_group">Роль (группа)</p>
             </div>
             <div class="section__users" v-for="(user, id) in getUsers" :key="user.name" :id="id">
-                <input type="checkbox" :checked="user.isChecked" class="section__checkbox" @click="checkUser"/>
+                <input type="checkbox" id="user_check" :checked="user.isChecked" class="section__checkbox" @click="checkUser"/>
+                <label for="user_check"></label>
                 <p class="section__text section__title_name">{{user.secondName + ' ' + user.name + ' ' + user.patronymic}}</p>
                 <p class="section__text section__title_login">{{user.login}}</p>
                 <p class="section__text section__title_email">{{user.email}}</p>
@@ -50,6 +51,9 @@
             checkUser(evt) {
                 this.$store.dispatch('checkUser', evt.target.parentElement.id)
             },
+            checkAllUser() {
+                this.$store.dispatch('checkAllUsers')
+            },
             deleteUser() {
                 this.$store.dispatch('deleteUser', this.getUsers)
             }
@@ -59,13 +63,13 @@
 </script>
 
 <style scoped>
-    .test {
+    .section__checkbox {
         position: absolute;
         z-index: -1;
         opacity: 0;
     }
 
-    .test+label::before {
+    .section__checkbox+label::before {
         content: "";
         display: inline-block;
         width: 20px;
@@ -76,7 +80,7 @@
         margin-right: 12px;
     }
 
-    .test:checked+label::before {
+    .section__checkbox:checked+label::before {
         background-image: url('../assets/checked.svg');
         background-repeat: no-repeat;
         background-position: center;
@@ -99,13 +103,6 @@
         border-bottom: 1px solid #EDF2F8;
         padding-bottom: 10px;
         margin-bottom: 26px;
-    }
-
-    .section__checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 12px;
-        margin-left: 12.5px;
     }
 
     .section__title {

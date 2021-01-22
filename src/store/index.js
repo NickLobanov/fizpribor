@@ -7,7 +7,9 @@ export default new Vuex.Store({
     actions: {
         checkUser(ctx, userId) {
             ctx.commit('checkUser', userId)
-
+        },
+        checkAllUsers(ctx) {
+            ctx.commit('checkAllUsers')
         },
         deleteUser(ctx, users) {
             const newUsersArray = users.filter((user) => {
@@ -23,6 +25,11 @@ export default new Vuex.Store({
         },
         checkUser(state, userId) {
             state.users[userId].isChecked = !state.users[userId].isChecked
+        },
+        checkAllUsers(state) {
+            state.users.forEach(user => {
+                user.isChecked = !user.isChecked
+            })
         },
         deleteUser(state, users) {
             state.users = users
