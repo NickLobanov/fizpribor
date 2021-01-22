@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @edit-click="editClick"/>
     <main class="main">
       <ModulePanel />
       <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
@@ -79,6 +79,9 @@ export default {
       this.popupOrganizationIsOpen = false
       this.popupGroupIsOpen = false
       this.popupRoleIsOpen = false
+    },
+    editClick() {
+      this.currentTub = 'Dashboard'
     }
   },
   computed: {

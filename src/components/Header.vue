@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <img src="@/assets/logo.svg" class="header__logo"/>
-        <button class="header__button"></button>
+        <button class="header__button" @click="$emit('edit-click')"></button>
     </header>
 </template>
 
@@ -36,5 +36,6 @@
         background-image: url('../assets/edit.svg');
         background-repeat: no-repeat;
         background-position: center;
+        cursor: pointer;
     }
 </style>
