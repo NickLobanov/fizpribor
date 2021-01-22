@@ -28,6 +28,10 @@ export default new Vuex.Store({
         createNewOrganization(state, addNewOrganization) {
             state.organizations.push(addNewOrganization)
         },
+        //Создание новой организации
+        createNewGroup(state, addNewGroup) {
+            state.groups.push(addNewGroup)
+        },
         //Выбор пользователя
         checkUser(state, userId) {
             state.users[userId].isChecked = !state.users[userId].isChecked
