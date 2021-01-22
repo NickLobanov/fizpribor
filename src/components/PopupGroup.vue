@@ -27,7 +27,8 @@
                 this.createNewGroup({
                     name: this.name,
                     project: this.project,
-                    competitors: this.competitors
+                    competitors: this.competitors,
+                    isChecked: false
                 })
                 this.name = this.project = this.competitors = ''
                 this.onClose()

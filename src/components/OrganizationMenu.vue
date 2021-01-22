@@ -5,6 +5,7 @@
             :addButtonText="addButtonText"
             :deleteButtonText="deleteButtonText"
             @add-button-click="addButtonClick"
+            @handle-delete="deleteOrganization"
         />
         <div class="section__container">
             <div class="section__column">
@@ -47,14 +48,14 @@
                 this.$emit('add-button-click', 'Organization')
             },
             checkOrganization(evt) {
-                this.$store.dispatch('checkUser', evt.target.id)
+                this.$store.dispatch('checkOrganization', evt.target.id)
             },
             checkAllOrganization() {
                 this.$store.dispatch('checkAllOrganization')
                 this.allChecked = !this.allChecked
             },
-            deleteUser() {
-                this.$store.dispatch('deleteUser', this.getUsers)
+            deleteOrganization() {
+                this.$store.dispatch('deleteOrganization', this.getOrganizations)
                 this.allChecked = false
             }
         },

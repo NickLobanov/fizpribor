@@ -27,7 +27,8 @@
                 this.createNewRole({
                     name: this.name,
                     keyName: this.keyName,
-                    functions: [this.functions]
+                    functions: [this.functions],
+                    isChecked: false
                 })
                 this.name = this.keyName = this.functions = ''
                 this.onClose()

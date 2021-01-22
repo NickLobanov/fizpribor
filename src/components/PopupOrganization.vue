@@ -27,7 +27,8 @@
                 this.createNewOrganization({
                     name: this.name,
                     project: this.project,
-                    responible: this.responible
+                    responible: this.responible,
+                    isChecked: false
                 })
                 this.name = this.project = this.responible = ''
                 this.onClose()

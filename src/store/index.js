@@ -18,12 +18,18 @@ export default new Vuex.Store({
         checkAllOrganization(ctx) {
             ctx.commit('checkAllOrganization')
         },
+
         deleteUser(ctx, users) {
             const newUsersArray = users.filter((user) => {
                 return user.isChecked !== true
             })
-            console.log(newUsersArray)
             ctx.commit('deleteUser', newUsersArray)
+        },
+        deleteOrganization(ctx, organizations) {
+            const newOrganizationArray = organizations.filter((organization) => {
+                return organization.isChecked !== true
+            })
+            ctx.commit('deleteOrganization', newOrganizationArray)
         }
     },
     mutations: {
@@ -65,8 +71,12 @@ export default new Vuex.Store({
                 organization.isChecked = !organization.isChecked
             })
         },
+
         deleteUser(state, users) {
             state.users = users
+        },
+        deleteOrganization(state, organization) {
+            state.organizations = organization
         }
         
     },
