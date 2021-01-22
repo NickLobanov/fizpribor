@@ -18,7 +18,7 @@
             return {
                 name: '',
                 keyName: '',
-                functions: ''
+                functions: '',
             }
         },
         methods: {

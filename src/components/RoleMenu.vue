@@ -5,18 +5,19 @@
             :addButtonText="addButtonText" 
             :deleteButtonText="deleteButtonText"
             @add-button-click="addButtonClick"
+            @handle-delete="deleteRole"
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" id="select-all" class="section__checkbox"/>
+                <input type="checkbox" id="select-all" :checked="allChecked" class="section__checkbox" @click="checkAllRole"/>
                 <label for="select-all"></label>
                 <p class="section__title section__title_name">Название роли</p>
                 <p class="section__title section__title_keys">Ключ</p>
                 <p class="section__title section__title_functions">Функции</p>
             </div>
             <div class="section__users" v-for="(role, id) in getRole" :key="id">
-                <input type="checkbox" id="role_check" class="section__checkbox"/>
-                <label for="role_check"></label>
+                <input type="checkbox" :id="id" :checked="role.isChecked" class="section__checkbox" @click="checkRole"/>
+                <label :for="id"></label>
                 <p class="section__text section__title_name">{{role.name}}</p>
                 <p class="section__text section__title_keys">{{role.keyName}}</p>
                 <p class="section__text section__title_functions">{{role.functions.join(', ')}}</p>
@@ -35,7 +36,8 @@
                 title: 'РОЛИ',
                 buttonText: 'Новая роль',
                 addButtonText: 'Добавить в проект',
-                deleteButtonText: 'Удалить из проекта'
+                deleteButtonText: 'Удалить из проекта',
+                allChecked: false
             }
         },
         components: {
@@ -44,6 +46,17 @@
         methods: {
             addButtonClick() {
                 this.$emit('add-button-click', 'Role')
+            },
+            checkRole(evt) {
+                this.$store.dispatch('checkRole', evt.target.id)
+            },
+            checkAllRole() {
+                this.$store.dispatch('checkAllRole')
+                this.allChecked = !this.allChecked
+            },
+            deleteRole() {
+                this.$store.dispatch('deleteRole', this.getRole)
+                this.allChecked = false
             }
         },
         computed: mapGetters(['getRole'])

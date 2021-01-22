@@ -126,7 +126,7 @@ export default new Vuex.Store({
             state.groups = group
         },
         deleteRole(state, role) {
-            state.roles = role
+            state.role = role
         }
         
     },
