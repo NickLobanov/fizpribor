@@ -11,12 +11,24 @@ export default new Vuex.Store({
         checkOrganization(ctx, userId) {
             ctx.commit('checkOrganization', userId)
         },
+        checkGroup(ctx, userId) {
+            ctx.commit('checkGroup', userId)
+        },
+        checkRole(ctx, userId) {
+            ctx.commit('checkRole', userId)
+        },
 
         checkAllUsers(ctx) {
             ctx.commit('checkAllUsers')
         },
         checkAllOrganization(ctx) {
             ctx.commit('checkAllOrganization')
+        },
+        checkAllGroup(ctx) {
+            ctx.commit('checkAllGroup')
+        },
+        checkAllRole(ctx) {
+            ctx.commit('checkAllRole')
         },
 
         deleteUser(ctx, users) {
@@ -30,6 +42,18 @@ export default new Vuex.Store({
                 return organization.isChecked !== true
             })
             ctx.commit('deleteOrganization', newOrganizationArray)
+        },
+        deleteGroup(ctx, groups) {
+            const newGroupArray = groups.filter((group) => {
+                return group.isChecked !== true
+            })
+            ctx.commit('deleteGroup', newGroupArray)
+        },
+        deleteRole(ctx, roles) {
+            const newRoleArray = roles.filter((role) => {
+                return role.isChecked !== true
+            })
+            ctx.commit('deleteRole', newRoleArray)
         }
     },
     mutations: {
@@ -58,6 +82,14 @@ export default new Vuex.Store({
         checkOrganization(state, organizationId) {
             state.organizations[organizationId].isChecked = !state.organizations[organizationId].isChecked
         },
+         //Выбор группы
+         checkGroup(state, groupId) {
+            state.groups[groupId].isChecked = !state.groups[groupId].isChecked
+        },
+         //Выбор роли
+         checkRole(state, roleId) {
+            state.role[roleId].isChecked = !state.role[roleId].isChecked
+        },
 
         //Выбор всех пользователей
         checkAllUsers(state) {
@@ -71,12 +103,30 @@ export default new Vuex.Store({
                 organization.isChecked = !organization.isChecked
             })
         },
+        //Выбор всех групп
+        checkAllGroup(state) {
+            state.groups.forEach(group => {
+                group.isChecked = !group.isChecked
+            })
+        },
+        //Выбор всех ролей
+        checkAllRole(state) {
+            state.role.forEach(role => {
+                role.isChecked = !role.isChecked
+            })
+        },
 
         deleteUser(state, users) {
             state.users = users
         },
         deleteOrganization(state, organization) {
             state.organizations = organization
+        },
+        deleteGroup(state, group) {
+            state.groups = group
+        },
+        deleteRole(state, role) {
+            state.roles = role
         }
         
     },
