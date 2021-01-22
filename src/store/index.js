@@ -20,12 +20,19 @@ export default new Vuex.Store({
         }
     },
     mutations: {
+        //Создание нового пользователя
         createNewUser(state, addNewUser) {
             state.users.push(addNewUser)
         },
+        //Создание новой организации
+        createNewOrganization(state, addNewOrganization) {
+            state.organizations.push(addNewOrganization)
+        },
+        //Выбор пользователя
         checkUser(state, userId) {
             state.users[userId].isChecked = !state.users[userId].isChecked
         },
+        //Выбор всех пользователей
         checkAllUsers(state) {
             state.users.forEach(user => {
                 user.isChecked = !user.isChecked

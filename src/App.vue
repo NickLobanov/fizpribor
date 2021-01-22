@@ -6,9 +6,9 @@
       <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
       <component :is="currentTubComponent" @add-button-click="buttonClick"></component>
       <PopupUsers :isOpen="popupUsersIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
-      <PopupOrganization :isOpen="popupOrganizationIsOpen" @close-popup="closeAllPopup"/>
-      <PopupGroup :isOpen="popupGroupIsOpen" @close-popup="closeAllPopup"/>
-      <PopupRole :isOpen="popupRoleIsOpen" @close-popup="closeAllPopup"/>
+      <PopupOrganization :isOpen="popupOrganizationIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
+      <PopupGroup :isOpen="popupGroupIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
+      <PopupRole :isOpen="popupRoleIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
     </main>
   </div>
 </template>
