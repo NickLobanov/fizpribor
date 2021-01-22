@@ -1,15 +1,28 @@
 <template>
     <section class="dashboard">
-        <DashboardItemWithProject :dashboardTitle="newProject" :buttonText="btnTextProject"/>
-        <DashboardItemWithoutProject :dashboardTitle="newOrganization" :buttonText="btnTextOrganization"/>
-        <DashboardItemWithProject :dashboardTitle="newUser" :buttonText="btnTextUser"/>
-        <DashboardItemWithoutProject :dashboardTitle="newGroup" :buttonText="btnTextGroup"/>
+        <DashboardItemWithProject :dashboardTitle="newProject"
+            :buttonText="btnTextProject" 
+            :amountState="this.getUsers.length"
+        />
+        <DashboardItemWithoutProject :dashboardTitle="newOrganization"
+            :buttonText="btnTextOrganization" 
+            :amountState="this.getOrganizations.length"
+        />
+        <DashboardItemWithProject :dashboardTitle="newUser" 
+            :buttonText="btnTextUser" 
+            :amountState="this.getGroups.length"
+        />
+        <DashboardItemWithoutProject :dashboardTitle="newGroup"
+            :buttonText="btnTextGroup" 
+            :amountState="this.getRole.length"
+        />
     </section>
 </template>
 
 <script>
     import DashboardItemWithProject from '@/components/DashboardItemWithProject.vue'
     import DashboardItemWithoutProject from '@/components/DashboardItemWithoutProject.vue'
+    import {mapGetters} from 'vuex'
     export default {
         components: {
             DashboardItemWithProject,
@@ -26,7 +39,8 @@
                 newGroup: 'Группы',
                 btnTextGroup: 'Новая группа',
             }
-        }
+        },
+        computed: mapGetters(['getUsers', 'getOrganizations', 'getGroups', 'getRole'])
     }
 </script>
 

@@ -1,13 +1,13 @@
 <template>
     <div class="dashboard-header">
-        <h2 class="dashboard-header__title">{{dashboardTitle}}</h2>
+        <h2 class="dashboard-header__title">{{dashboardTitle}} ({{amountState}})</h2>
         <button class="dashboard-header__button">{{buttonText}}</button>
     </div>
 </template>
 
 <script>
     export default {
-        props: ['dashboardTitle', 'buttonText']
+        props: ['dashboardTitle', 'buttonText', 'amountState'],
     }
 </script>
 
@@ -37,6 +37,7 @@
         background: #8292A5;
         border: none;
         border-radius: 3px;
+        color: #ffffff;
     }
 
     @media screen and (max-width: 1919px) {
