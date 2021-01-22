@@ -8,13 +8,15 @@
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" class="section__checkbox"/>
+                <input type="checkbox" id="select-all" class="section__checkbox"/>
+                <label for="select-all"></label>
                 <p class="section__title section__title_name">Наименование органиазции</p>
                 <p class="section__title section__title_projects">Проекты</p>
                 <p class="section__title section__title_responible">Ответсвенный</p>
             </div>
             <div class="section__users" v-for="organization in getOrganizations" :key="organization.name">
-                <input type="checkbox" class="section__checkbox" />
+                <input type="checkbox" id="organization_check" class="section__checkbox" />
+                <label for="organization_check"></label>
                 <p class="section__text section__title_name">{{organization.name}}</p>
                 <p class="section__text section__title_projects">{{organization.project}}</p>
                 <p class="section__text section__title_responible">{{organization.responible}}</p>
@@ -48,7 +50,30 @@
     }
 </script>
 
-<style scoped>
+<style scoped> 
+    .section__checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .section__checkbox+label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #9BA8B7;
+        border-radius: 4px;
+        margin-left: 12.5px;
+        margin-right: 12px;
+    }
+
+    .section__checkbox:checked+label::before {
+        background-image: url('../assets/checked.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     .section {
         width: 1447px;
         padding-top: 17px;
@@ -66,13 +91,6 @@
         border-bottom: 1px solid #EDF2F8;
         padding-bottom: 10px;
         margin-bottom: 26px;
-    }
-
-    .section__checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 12px;
-        margin-left: 12.5px;
     }
 
     .section__title {

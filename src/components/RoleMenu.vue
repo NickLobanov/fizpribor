@@ -8,13 +8,15 @@
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" class="section__checkbox"/>
-                <p class="section__title section__title_name">Название группы</p>
+                <input type="checkbox" id="select-all" class="section__checkbox"/>
+                <label for="select-all"></label>
+                <p class="section__title section__title_name">Название роли</p>
                 <p class="section__title section__title_keys">Ключ</p>
                 <p class="section__title section__title_functions">Функции</p>
             </div>
             <div class="section__users" v-for="(role, id) in getRole" :key="id">
-                <input type="checkbox" class="section__checkbox"/>
+                <input type="checkbox" id="role_check" class="section__checkbox"/>
+                <label for="role_check"></label>
                 <p class="section__text section__title_name">{{role.name}}</p>
                 <p class="section__text section__title_keys">{{role.keyName}}</p>
                 <p class="section__text section__title_functions">{{role.functions.join(', ')}}</p>
@@ -49,6 +51,29 @@
 </script>
 
 <style scoped>
+    .section__checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .section__checkbox+label::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #9BA8B7;
+        border-radius: 4px;
+        margin-left: 12.5px;
+        margin-right: 12px;
+    }
+
+    .section__checkbox:checked+label::before {
+        background-image: url('../assets/checked.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
     .section {
         width: 1447px;
         padding-top: 17px;

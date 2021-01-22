@@ -9,7 +9,7 @@
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" class="section__checkbox" id="select-all" @click="checkAllUser"/>
+                <input type="checkbox" :checked="allChecked" class="section__checkbox" id="select-all" @click="checkAllUser"/>
                 <label for="select-all"></label>
                 <p class="section__title section__title_name">ФИО</p>
                 <p class="section__title section__title_login">Логин</p>
@@ -39,6 +39,7 @@
                 buttonText: 'Новый пользователь',
                 addButtonText: 'Добавить в группу',
                 deleteButtonText: 'Удалить из группы',
+                allChecked: false
             }
         },
         components: {
@@ -53,9 +54,11 @@
             },
             checkAllUser() {
                 this.$store.dispatch('checkAllUsers')
+                this.allChecked = !this.allChecked
             },
             deleteUser() {
                 this.$store.dispatch('deleteUser', this.getUsers)
+                this.allChecked = false
             }
         },
         computed: mapGetters(['getUsers']),
