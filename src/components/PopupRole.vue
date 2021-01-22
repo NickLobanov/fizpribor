@@ -1,5 +1,5 @@
 <template>
-    <Popup :isOpen="isOpen">
+    <Popup :isOpen="isOpen" @close-popup="$emit('close-popup')">
         <input class="popup__input" placeholder="Название роли"/>
         <input class="popup__input" placeholder="Название ключа"/>
         <input class="popup__input" placeholder="Функции"/>

@@ -5,10 +5,10 @@
       <ModulePanel />
       <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
       <component :is="currentTubComponent" @add-button-click="buttonClick"></component>
-      <PopupUsers :isOpen="popupUsersIsOpen"/>
-      <PopupOrganization :isOpen="popupOrganizationIsOpen"/>
-      <PopupGroup :isOpen="popupGroupIsOpen"/>
-      <PopupRole :isOpen="popupRoleIsOpen"/>
+      <PopupUsers :isOpen="popupUsersIsOpen" @close-popup="closeAllPopup"/>
+      <PopupOrganization :isOpen="popupOrganizationIsOpen" @close-popup="closeAllPopup"/>
+      <PopupGroup :isOpen="popupGroupIsOpen" @close-popup="closeAllPopup"/>
+      <PopupRole :isOpen="popupRoleIsOpen" @close-popup="closeAllPopup"/>
     </main>
   </div>
 </template>
@@ -71,6 +71,13 @@ export default {
       if (component === 'Role') {
         this.popupRoleIsOpen = true
       }
+    },
+    //Закрытие попапов
+    closeAllPopup() {
+      this.popupUsersIsOpen = false
+      this.popupOrganizationIsOpen = false
+      this.popupGroupIsOpen = false
+      this.popupRoleIsOpen = false
     }
   },
   computed: {

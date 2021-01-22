@@ -4,7 +4,7 @@
             <h2 class="popup__title">title</h2>
             <slot></slot>
             <button class="popup__button">Создать</button>
-            <button class="popup__close-btn"></button>
+            <button type="button" class="popup__close-btn" @click="$emit('close-popup')"></button>
         </form>
     </div>
 </template>
