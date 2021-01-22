@@ -8,8 +8,15 @@ export default new Vuex.Store({
         checkUser(ctx, userId) {
             ctx.commit('checkUser', userId)
         },
+        checkOrganization(ctx, userId) {
+            ctx.commit('checkOrganization', userId)
+        },
+
         checkAllUsers(ctx) {
             ctx.commit('checkAllUsers')
+        },
+        checkAllOrganization(ctx) {
+            ctx.commit('checkAllOrganization')
         },
         deleteUser(ctx, users) {
             const newUsersArray = users.filter((user) => {
@@ -36,14 +43,26 @@ export default new Vuex.Store({
         createNewRole(state, addNewRole) {
             state.role.push(addNewRole)
         },
+
         //Выбор пользователя
-        checkUser(state, userId) {
+        checkUser(state, userId,) {
             state.users[userId].isChecked = !state.users[userId].isChecked
         },
+        //Выбор организации
+        checkOrganization(state, organizationId) {
+            state.organizations[organizationId].isChecked = !state.organizations[organizationId].isChecked
+        },
+
         //Выбор всех пользователей
         checkAllUsers(state) {
             state.users.forEach(user => {
                 user.isChecked = !user.isChecked
+            })
+        },
+         //Выбор всех пользователей
+         checkAllOrganization(state) {
+            state.organizations.forEach(organization => {
+                organization.isChecked = !organization.isChecked
             })
         },
         deleteUser(state, users) {

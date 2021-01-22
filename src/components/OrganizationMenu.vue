@@ -8,15 +8,15 @@
         />
         <div class="section__container">
             <div class="section__column">
-                <input type="checkbox" id="select-all" class="section__checkbox"/>
+                <input type="checkbox" id="select-all" :checked="allChecked" class="section__checkbox" @click="checkAllOrganization"/>
                 <label for="select-all"></label>
                 <p class="section__title section__title_name">Наименование органиазции</p>
                 <p class="section__title section__title_projects">Проекты</p>
                 <p class="section__title section__title_responible">Ответсвенный</p>
             </div>
-            <div class="section__users" v-for="organization in getOrganizations" :key="organization.name">
-                <input type="checkbox" id="organization_check" class="section__checkbox" />
-                <label for="organization_check"></label>
+            <div class="section__users" v-for="(organization, id) in getOrganizations" :key="organization.name">
+                <input type="checkbox" :id="id" :checked="organization.isChecked" class="section__checkbox" @click="checkOrganization"/>
+                <label :for="id"></label>
                 <p class="section__text section__title_name">{{organization.name}}</p>
                 <p class="section__text section__title_projects">{{organization.project}}</p>
                 <p class="section__text section__title_responible">{{organization.responible}}</p>
@@ -35,7 +35,8 @@
                 title: 'ОРГАНИЗАЦИИ',
                 buttonText: 'Новая организация',
                 addButtonText: 'Добавить в проект',
-                deleteButtonText: 'Удалить из проекта'
+                deleteButtonText: 'Удалить из проекта',
+                allChecked: false
             }
         },
         components: {
@@ -44,6 +45,17 @@
         methods: {
             addButtonClick() {
                 this.$emit('add-button-click', 'Organization')
+            },
+            checkOrganization(evt) {
+                this.$store.dispatch('checkUser', evt.target.id)
+            },
+            checkAllOrganization() {
+                this.$store.dispatch('checkAllOrganization')
+                this.allChecked = !this.allChecked
+            },
+            deleteUser() {
+                this.$store.dispatch('deleteUser', this.getUsers)
+                this.allChecked = false
             }
         },
         computed: mapGetters(['getOrganizations'])

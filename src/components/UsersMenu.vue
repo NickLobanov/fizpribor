@@ -16,9 +16,9 @@
                 <p class="section__title section__title_email">Электронная почта</p>
                 <p class="section__title section__title_group">Роль (группа)</p>
             </div>
-            <div class="section__users" v-for="(user, id) in getUsers" :key="user.name" :id="id">
-                <input type="checkbox" id="user_check" :checked="user.isChecked" class="section__checkbox" @click="checkUser"/>
-                <label for="user_check"></label>
+            <div class="section__users" v-for="(user, id) in getUsers" :key="user.name">
+                <input type="checkbox" :id="id" :checked="user.isChecked" class="section__checkbox" @click="checkUser"/>
+                <label :for="id"></label>
                 <p class="section__text section__title_name">{{user.secondName + ' ' + user.name + ' ' + user.patronymic}}</p>
                 <p class="section__text section__title_login">{{user.login}}</p>
                 <p class="section__text section__title_email">{{user.email}}</p>
@@ -50,7 +50,7 @@
                 this.$emit('add-button-click', 'Users')
             },
             checkUser(evt) {
-                this.$store.dispatch('checkUser', evt.target.parentElement.id)
+                this.$store.dispatch('checkUser', evt.target.id)
             },
             checkAllUser() {
                 this.$store.dispatch('checkAllUsers')
