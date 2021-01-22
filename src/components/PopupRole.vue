@@ -1,8 +1,8 @@
 <template>
     <Popup :isOpen="isOpen">
-        <input class="popup__input" placeholder="Название группы"/>
-        <input class="popup__input" placeholder="Название проекта"/>
-        <input class="popup__input" placeholder="Участники"/>
+        <input class="popup__input" placeholder="Название роли"/>
+        <input class="popup__input" placeholder="Название ключа"/>
+        <input class="popup__input" placeholder="Функции"/>
     </Popup>
 </template>
 
@@ -10,7 +10,7 @@
     import Popup from '@/components/Popup.vue'
     export default {
         components: {
-            Popup
+           Popup 
         },
         props: ['isOpen']
     }

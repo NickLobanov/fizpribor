@@ -4,6 +4,7 @@
             :buttonText="buttonText"
             :addButtonText="addButtonText"
             :deleteButtonText="deleteButtonText"
+            @add-button-click="addButtonClick"
         />
         <div class="section__container">
             <div class="section__column">
@@ -40,6 +41,12 @@
         },
         components: {
             AccessMenuHeader,
+        },
+        methods: {
+            addButtonClick() {
+                console.log('123')
+                this.$emit('add-button-click', 'Users')
+            }
         },
         computed: mapGetters(['getUsers']),
     }

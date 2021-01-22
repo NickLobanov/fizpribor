@@ -3,7 +3,7 @@
         <div class="menu-header__search">
             <h2 class="menu-header__title">{{title}}</h2>
             <label class="menu-header__label"><input class="menu-header__input"/></label>
-            <button class="menu-header__add-btn">{{buttonText}}</button>
+            <button class="menu-header__add-btn" @click="$emit('add-button-click')">{{buttonText}}</button>
         </div>
         <div class="menu-header__controllers">
             <button class="menu-header__button menu-header__button_selector">{{addButtonText}}</button>

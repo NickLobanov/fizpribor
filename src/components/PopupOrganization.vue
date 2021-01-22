@@ -1,5 +1,5 @@
 <template>
-    <Popup>
+    <Popup :isOpen="isOpen">
         <input class="popup__input" placeholder="Наиминование организации"/>
         <input class="popup__input" placeholder="Название проекта"/>
         <input class="popup__input" placeholder="Ответственный"/>
@@ -11,7 +11,8 @@
     export default {
         components: {
             Popup
-        }
+        },
+        props: ['isOpen']
     }
 </script>
 

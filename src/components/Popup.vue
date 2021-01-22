@@ -1,5 +1,5 @@
 <template>
-    <div class="popup">
+    <div class="popup" :class="{popup_opened: isOpen}">
         <form class="popup__form">
             <h2 class="popup__title">title</h2>
             <slot></slot>
@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        
+        props: ['isOpen']
     }
 </script>
 
@@ -24,6 +24,15 @@
         left: 0;
         z-index: 7;
         background-color: rgba(00, 00, 00, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1.5s, visibility 1.5s;
+    }
+
+    .popup_opened {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1.5s, visibility 0s;
     }
 
     .popup__form {

@@ -1,5 +1,5 @@
 <template>
-    <Popup>
+    <Popup :isOpen="isOpen">
         <input class="popup__input" placeholder="Имя"/>
         <input class="popup__input" placeholder="Фамилия"/>
         <input class="popup__input" placeholder="Отчество"/>
@@ -15,6 +15,7 @@
         components: {
             Popup,
         },
+        props: ['isOpen']
     }
 </script>
 

@@ -4,14 +4,11 @@
     <main class="main">
       <ModulePanel />
       <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
-      <component :is="currentTubComponent"></component>
-      <PopupUsers :popupUserName="popupUserName"
-        :popupUserSecondName="popupUserSecondName"
-        :popupUserPatronymic="popupUserPatronymic"
-        :popupUserLogin="popupUserLogin"
-        :popupUserEmail="popupUserEmail"
-        :popupUserRole="popupUserRole"
-      />
+      <component :is="currentTubComponent" @add-button-click="buttonClick"></component>
+      <PopupUsers :isOpen="popupUsersIsOpen"/>
+      <PopupOrganization :isOpen="popupOrganizationIsOpen"/>
+      <PopupGroup :isOpen="popupGroupIsOpen"/>
+      <PopupRole :isOpen="popupRoleIsOpen"/>
     </main>
   </div>
 </template>
@@ -26,12 +23,19 @@ import Organization from '@/components/OrganizationMenu.vue'
 import Group from '@/components/GroupMenu.vue'
 import Role from '@/components/RoleMenu.vue'
 import PopupUsers from '@/components/PopupUsers.vue'
+import PopupOrganization from '@/components/PopupOrganization.vue'
+import PopupGroup from '@/components/PopupGroup.vue'
+import PopupRole from '@/components/PopupRole.vue'
 
 export default {
   name: 'App',
   data() {
     return {
       currentTub: 'Dashboard',
+      popupUsersIsOpen: false,
+      popupOrganizationIsOpen: false,
+      popupGroupIsOpen: false,
+      popupRoleIsOpen: false
     }
   },
   components: {
@@ -43,11 +47,30 @@ export default {
    Organization,
    Group,
    Role,
-   PopupUsers
+   PopupUsers,
+   PopupOrganization,
+   PopupGroup,
+   PopupRole
   },
   methods: {
     menuClick(itemId) {
       this.currentTub = itemId[0].toUpperCase() + itemId.slice(1)
+    },
+    // Открытие попапов
+    buttonClick(component) {
+      console.log(component)
+      if (component === 'Users') {
+        this.popupUsersIsOpen = true
+      }
+      if (component === 'Organization') {
+        this.popupOrganizationIsOpen = true
+      }
+      if (component === 'Group') {
+        this.popupGroupIsOpen = true
+      }
+      if (component === 'Role') {
+        this.popupRoleIsOpen = true
+      }
     }
   },
   computed: {
