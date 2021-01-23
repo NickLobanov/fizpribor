@@ -4,7 +4,7 @@
     <main class="main">
       <ModulePanel />
       <NavPanel @menu-click="menuClick" :currentItem="currentTub"/>
-      <component :is="currentTubComponent" @add-button-click="buttonClick"></component>
+      <component :is="currentTubComponent" @add-button-click="buttonClick" @dashboard-click="buttonClick"></component>
       <PopupUsers :isOpen="popupUsersIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
       <PopupOrganization :isOpen="popupOrganizationIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
       <PopupGroup :isOpen="popupGroupIsOpen" @close-popup="closeAllPopup" :onClose="closeAllPopup"/>
@@ -59,7 +59,6 @@ export default {
     },
     // Открытие попапов
     buttonClick(component) {
-      console.log(component)
       if (component === 'Users') {
         this.popupUsersIsOpen = true
       }

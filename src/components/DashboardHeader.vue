@@ -1,7 +1,7 @@
 <template>
     <div class="dashboard-header">
         <h2 class="dashboard-header__title">{{dashboardTitle}} ({{amountState}})</h2>
-        <button class="dashboard-header__button">{{buttonText}}</button>
+        <button class="dashboard-header__button" @click="$emit('dashboard-click')">{{buttonText}}</button>
     </div>
 </template>
 

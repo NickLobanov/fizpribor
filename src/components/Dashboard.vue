@@ -7,14 +7,17 @@
         <DashboardItemWithoutProject :dashboardTitle="newOrganization"
             :buttonText="btnTextOrganization" 
             :amountState="this.getOrganizations"
+            @dashboard-click="$emit('dashboard-click', 'Organization')"
         />
         <DashboardItemWithProject :dashboardTitle="newUser" 
             :buttonText="btnTextUser" 
             :amountState="this.getGroups"
+            @dashboard-click="$emit('dashboard-click', 'Users')"
         />
         <DashboardItemWithoutProject :dashboardTitle="newGroup"
             :buttonText="btnTextGroup" 
             :amountState="this.getRole"
+            @dashboard-click="$emit('dashboard-click', 'Group')"
         />
     </section>
 </template>
@@ -30,7 +33,7 @@
         },
         data() {
             return {
-                newProject: 'Проеты',
+                newProject: 'Проекты',
                 btnTextProject: 'Новый проект',
                 newOrganization: 'Организации',
                 btnTextOrganization: 'Новая организация',

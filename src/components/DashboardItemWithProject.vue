@@ -1,6 +1,10 @@
 <template>
     <div class="dashboard-item">
-        <DashboardHeader :dashboardTitle="dashboardTitle" :buttonText="buttonText" :amountState="amountState.length"/>
+        <DashboardHeader :dashboardTitle="dashboardTitle"
+            :buttonText="buttonText" 
+            :amountState="amountState.length"
+            @dashboard-click="dashboardClick"
+        />
         <div class="dashboard-item__statistics">
             <h2 class="dashboard-item__title">Статистика</h2>
         </div>
@@ -20,7 +24,12 @@
         components: {
             DashboardHeader,
         },
-        props: ['dashboardTitle', 'buttonText', 'amountState']
+        props: ['dashboardTitle', 'buttonText', 'amountState'],
+        methods: {
+            dashboardClick() {
+                this.$emit('dashboard-click')
+            }
+        }
     }
 </script>
 
