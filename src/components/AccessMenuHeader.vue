@@ -84,6 +84,7 @@
         background-color: #3F6AD8;
         border: none;
         border-radius: 3px;
+        cursor: pointer;
     }
 
     .menu-header__controllers {

@@ -46,7 +46,7 @@ export default {
             },
             {
                 name: 'Максим',
-                secondName: 'Ничаев',
+                secondName: 'Нечаев',
                 patronymic: 'Артурович',
                 login: 'NechaevM',
                 email: 'NechaevM@fizpribor.ru',

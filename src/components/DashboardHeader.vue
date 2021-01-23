@@ -38,6 +38,7 @@
         border: none;
         border-radius: 3px;
         color: #ffffff;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 1919px) {
