@@ -13,7 +13,7 @@
 
 <style scoped>
     .dashboard-header {
-        width: 342px;
+        width: 100%;
         margin-bottom: 12px;
         background-color: #ffffff;
     }
@@ -42,7 +42,7 @@
 
     @media screen and (max-width: 1919px) {
         .dashboard-header {
-            width: 270px;
+            width: 100%;
         }
     }
 </style>

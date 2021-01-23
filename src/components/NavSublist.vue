@@ -23,4 +23,10 @@
     .navbar_close {
         display: none;
     }
+
+    @media screen and (max-width: 1919px) {
+        .navbar-sublist {
+            width: 230px;
+        }
+    }
 </style>

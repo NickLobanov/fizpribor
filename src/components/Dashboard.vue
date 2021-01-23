@@ -48,14 +48,14 @@
     .dashboard {
         display: flex;
         justify-content: space-between;
-        width: 1446px;
+        width: 70%;
         margin: 0 auto;
         margin-top: 35px;
     }
 
     @media screen and (max-width: 1919px) {
         .dashboard {
-            width: 1100px;
+            width: 70%;
         }
     }
 </style>

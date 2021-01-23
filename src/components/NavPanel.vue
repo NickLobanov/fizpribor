@@ -38,4 +38,10 @@
         padding-top: 22px
     }
 
+    @media screen and (max-width: 1919px) {
+        .navbar {
+            width: 300px;
+        }
+    }
+
 </style>

@@ -6,6 +6,7 @@
             :deleteButtonText="deleteButtonText"
             @add-button-click="addButtonClick"
             @handle-delete="deleteRole"
+            :amountState="this.getRole.length"
         />
         <div class="section__container">
             <div class="section__column">
@@ -158,5 +159,49 @@
         opacity: 0.8;
         border-radius: 3px;
         padding: 10px 24px;
+    }
+
+    @media screen and (max-width: 1919px) {
+        .section {
+            width: 1100px;
+        }
+
+        .section__title_name {
+            width: 193px;
+            margin-right: 5%;
+        }
+
+        .section__title_keys {
+            width: 66px;
+            margin-right: 5%;
+        }
+
+        .section__title_functions {
+            width: 489px;
+            margin-right: 5%;
+        }
+
+        .section__checkbox+label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #9BA8B7;
+            border-radius: 4px;
+            margin-left: 0;
+            margin-right: 12px;
+        }
+
+        .section__column {
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 26px;
+        }
+
+        .section__users {
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 37px;
+        } 
     }
 </style>

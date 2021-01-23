@@ -6,6 +6,7 @@
             :deleteButtonText="deleteButtonText"
             @add-button-click="addButtonClick"
             @handle-delete="deleteUser"
+            :amountState="this.getUsers.length"
         />
         <div class="section__container">
             <div class="section__column">
@@ -164,5 +165,48 @@
         .section {
             width: 1100px;
         }
+
+        .section__title_name {
+            width: 220px;
+            margin-right: 8%;
+        }
+
+        .section__title_login {
+            width: 73px;
+            margin-right: 8%;
+        }
+
+        .section__title_email {
+            width: 150px;
+            margin-right: 8%;
+        }
+
+        .section__title_group {
+            width: 99px;
+            margin-right: 8%;
+        }
+
+        .section__checkbox+label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #9BA8B7;
+            border-radius: 4px;
+            margin-left: 0;
+            margin-right: 12px;
+        }
+
+        .section__column {
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 26px;
+        }
+
+        .section__users {
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 37px;
+        } 
     }
 </style>

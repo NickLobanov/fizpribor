@@ -21,7 +21,7 @@
 
 <style scoped>
     .dashboard-item {
-        width: 342px;
+        width: 23%;
     }
 
     .dashboard-item__statistics {
@@ -53,7 +53,7 @@
 
     @media screen and (max-width: 1919px) {
         .dashboard-item {
-            width: 270px;
+            width: 23%;
         }
     }
 </style>

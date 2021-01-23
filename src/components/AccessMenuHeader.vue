@@ -1,7 +1,7 @@
 <template>
     <div class="menu-header">
         <div class="menu-header__search">
-            <h2 class="menu-header__title">{{title}}</h2>
+            <h2 class="menu-header__title">{{title}} ({{amountState}})</h2>
             <label class="menu-header__label"><input class="menu-header__input"/></label>
             <button class="menu-header__add-btn" @click="$emit('add-button-click')">{{buttonText}}</button>
         </div>
@@ -16,7 +16,7 @@
 
 <script>
     export default {
-        props: ['title', 'buttonText', 'addButtonText', 'deleteButtonText']
+        props: ['title', 'buttonText', 'addButtonText', 'deleteButtonText', 'amountState']
     }
 </script>
 
@@ -120,5 +120,21 @@
         background-image: url('../assets/whitearrow.svg');
         background-position: center;
         background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 1919px) {
+        .menu-header__search {
+            width: 95%;
+        }
+
+        .menu-header__input {
+            margin-right: 0;
+        }
+
+        .menu-header__controllers {
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
     }
 </style>
